@@ -1,0 +1,188 @@
+﻿
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=11">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta http-equiv="Pragma" content="no-cache">
+    @Styles.Render("~/Content/css")
+    @* @Scripts.Render("~/bundles/modernizr")*@
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <title>@ViewBag.Title</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Content/estilo.css" rel="stylesheet" />
+
+
+</head>
+<body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Prefeitura Conecta", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li>@Html.ActionLink("Painel Principal", "Index", "Painel")</li>
+                    }
+                    @if (User.IsInRole("Administrador"))
+                    {
+                        <li>@Html.ActionLink("Usuários", "Index", "CadastroUsuarios")</li>
+
+                    }
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">@User.Identity.Name <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li>@Html.ActionLink("Alterar Senha", "AlterarSenha", "Perfil")</li>
+                                <li>@Html.ActionLink("Sair", "Logout", "Autenticacao")</li>
+                            </ul>
+                        </li>
+                    }
+                    else
+                    {
+                        <li>@Html.ActionLink("Cadastro", "Cadastrar", "Autenticacao")</li>
+                        <li>@Html.ActionLink("Login", "Login", "Autenticacao")</li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="wrapper">
+        <div class="canvas">
+            <div class="menu-left">
+
+                <br />
+                <br />
+
+
+                <div class="row">
+                    <div class="menu">
+
+                        @if (User.Identity.IsAuthenticated)
+                        {
+
+                            <h2> Franco da Rocha </h2>
+                            <ul class="sidebar-nav">
+
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Simples Nacional <span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li class="dropdown-submenu">
+                                            <a class="test" href="#">Painéis <span class="caret"></span></a>
+                                            <ul class="dropdown-menu">
+                                                <li>@Html.ActionLink("Gráficos", "Index", "Painel")</li>
+                                                <li>@Html.ActionLink("Declarações", "Index", "Declaracoes")</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">NFS</a></li>
+                                <li><a href="#">Valor Adicionado</a></li>
+                                <li><a href="#">Auditoria</a></li>
+                                <li><a href="#">ISS</a></li>
+                                <li><a href="#">Cadastro</a></li>
+                                <li><a href="#">Simulador</a></li>
+
+
+
+                            </ul>
+
+                        }
+
+                    </div>
+                </div>
+            </div>
+
+
+            <section>
+
+
+
+                <section>
+
+
+                    <div class="push-menu">
+                        <a href="#" class="toggle-menu"><span class="fa fa-reorder	fa-2x"></span></a>
+                    </div>
+
+                    @RenderBody()
+
+
+                    @if (TempData["ErroAutorizacao"] != null)
+                    {
+                        <div class="alert alert-danger">
+                            @TempData["ErroAutorizacao"]
+                        </div>
+                    }
+
+
+                </section>
+            </section>
+
+
+            @*<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>*@
+            @*<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>*@
+            <!-- Include all compiled plugins (below), or include individual files as needed -->
+            @Scripts.Render("~/bundles/jquery")
+            @Scripts.Render("~/bundles/bootstrap")
+            @RenderSection("scripts", required: false)
+
+            <script>
+                $(document).ready(function () {
+                    $('.dropdown-submenu a.test').on("click", function (e) {
+                        $(this).next('ul').toggle();
+                        e.stopPropagation();
+                        e.preventDefault();
+                    });
+                });
+
+                var toogleMenu = document.querySelectorAll('.toggle-menu'),
+                    wrapper = document.querySelector('.wrapper');
+
+                // criando evento de click para abrir o menu
+                for (var i = 0; i < toogleMenu.length; i++) {
+                    toogleMenu[i].addEventListener('click', menuAction);
+                }
+
+                // Adicionando evento para fechar o menu ao pressionar a tecla ESC
+                document.addEventListener('keyup', function (e) {
+                    if (e.keyCode == 27) {
+                        if (wrapper.classList.contains('show-menu')) {
+                            menuAction();
+                        }
+                    }
+                });
+
+                // função auxiliar que abre e fecha o menu
+                function menuAction() {
+                    if (wrapper.classList.contains('show-menu')) {
+                        wrapper.classList.remove('show-menu');
+                    }
+                    else {
+                        wrapper.classList.add('show-menu');
+                    }
+                }
+            </script>
+        </div>
+
+    </div>
+</body>
+</html>

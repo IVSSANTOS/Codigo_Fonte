@@ -1,0 +1,127 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+
+    <div class="table">
+
+        <h2>Declarações</h2>
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card btn btn-default">
+                    <div class="card-header"><h4>@Html.ActionLink("Empresas", "Index", "Painel") </h4></div>
+                    <div class="card-body">
+                        <h4>R$ 2,0000000000000000</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card btn btn-default">
+                    <div class="card-header"><h4>@Html.ActionLink("Declarações Transmitidas", "Index", "Painel") </h4></div>
+                    <div class="card-body">
+                        <h4>R$ 2,00</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card btn btn-default">
+                    <div class="card-header"><h4>@Html.ActionLink("Receita Declarada", "Index", "Painel") </h4></div>
+                    <div class="card-body">
+                        <h4>R$ 2,00</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br />
+        <br />
+
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card btn btn-default">
+                    <div class="card-header"><h4>@Html.ActionLink("Serviços(Sem Retenção)", "Index", "Painel") </h4></div>
+                    <div class="card-body">
+                        <h4>R$ 2,00</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card btn btn-default">
+                    <div class="card-header"><h4>@Html.ActionLink("Serviços(Com Retenção)", "Index", "Painel") </h4></div>
+                    <div class="card-body">
+                        <h4>R$ 2,00</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card btn btn-default">
+                    <div class="card-header"><h4>@Html.ActionLink("Serviços(Outros Municípios)", "Index", "Painel") </h4></div>
+                    <div class="card-body">
+                        <h4>R$ 2,00</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card btn btn-default">
+                    <div class="card-header"><h4>@Html.ActionLink("Serviços(Locação)", "Index", "Painel") </h4></div>
+                    <div class="card-body">
+                        <h4>R$ 2,00</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <br />
+        <br />
+
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card btn btn-default">
+                    <div class="card-header"><h4>@Html.ActionLink("Serviços(Contabilidade)", "Index", "Painel") </h4></div>
+                    <div class="card-body">
+                        <h4>R$ 2,00</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card btn btn-default">
+                    <div class="card-header"><h4>@Html.ActionLink("Serviços(Exterior)", "Index", "Painel") </h4></div>
+                    <div class="card-body">
+                        <h4>R$ 2,00</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card btn btn-default">
+                    <div class="card-header"><h4>@Html.ActionLink("Serviços(Mercado Interno)", "Index", "Painel") </h4></div>
+                    <div class="card-body">
+                        <h4>R$ 2,00</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card btn btn-default">
+                    <div class="card-header"><h4>@Html.ActionLink("Serviços(Mercado Externo)", "Index", "Painel") </h4></div>
+                    <div class="card-body">
+                        <h4>R$ 2,00</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@*@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}*@

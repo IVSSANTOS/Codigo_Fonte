@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9E6B0786-B042-4C14-AB9B-54200D6A7294}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PrefeituraConecta.API.Entidades</RootNamespace>
+    <AssemblyName>PrefeituraConecta.API.Entidades</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Arquivos\CampoArquivoPGDASD.cs" />
+    <Compile Include="Arquivos\PGDASD\Compatibilidade\REG_00000_LAYOUT_ATE_2014.cs" />
+    <Compile Include="Arquivos\PGDASD\Compatibilidade\REG_00000_LAYOUT_ATE_2017.cs" />
+    <Compile Include="Arquivos\PGDASD\Compatibilidade\REG_01000_LAYOUT_ATE_2017.cs" />
+    <Compile Include="Arquivos\PGDASD\Compatibilidade\REG_02000_LAYOUT_ATE_2014.cs" />
+    <Compile Include="Arquivos\PGDASD\Compatibilidade\REG_03000_LAYOUT_ATE_2014.cs" />
+    <Compile Include="Arquivos\PGDASD\Compatibilidade\REG_03112_LAYOUT_ATE_2017.cs" />
+    <Compile Include="Arquivos\PGDASD\Compatibilidade\REG_03122_LAYOUT_ATE_2017.cs" />
+    <Compile Include="Arquivos\PGDASD\REG_00000_CONTRIBUINTE_DADOS_APURACAO.cs" />
+    <Compile Include="Arquivos\PGDASD\REG_00001_PROCESSO_NAO_OPTANTE.cs" />
+    <Compile Include="Arquivos\PGDASD\REG_01000_VALOR_APURADO_CALCULO.cs" />
+    <Compile Include="Arquivos\PGDASD\REG_01100_PERFIL_DAS.cs" />
+    <Compile Include="Arquivos\PGDASD\REG_01500_RECEITAS_BRUTAS_PERIODO_ANTERIORES_OPCAO.cs" />
+    <Compile Include="Arquivos\PGDASD\REG_01501_RECEITAS_BRUTAS_PERIODO_ANTERIORES_OPCAO_MERCADO_INTERNO.cs" />
+    <Compile Include="Arquivos\PGDASD\REG_01502_RECEITAS_BRUTAS_PERIODO_ANTERIORES_OPCAO_MERCADO_EXTERNO.cs" />
+    <Compile Include="Arquivos\PGDASD\REG_02000_RECEITAS_BRUTAS_PERIODO_ANTERIORES_OPCAO_VALOR_ORIGINAL_TRIBUTOS_FIXOS.cs" />
+    <Compile Include="Arquivos\PGDASD\REG_03000_ESTABELECIMENTO_FILIAL.cs" />
+    <Compile Include="Arquivos\PGDASD\REG_03100_ATIVIDADE_SELECIONADA_ESTABELECIMENTO.cs" />
+    <Compile Include="Arquivos\PGDASD\REG_03110_VALOR_RECEITA_ATIVIDADE_PERCENTUAL_FAIXA_A.cs" />
+    <Compile Include="Arquivos\PGDASD\REG_03111_VALOR_RECEITA_ISENCAO_FAIXA_A.cs" />
+    <Compile Include="Arquivos\PGDASD\REG_03112_VALOR_RECEITA_ATIVIDADE_PERCENTUAL_FAIXA_A.cs" />
+    <Compile Include="Arquivos\PGDASD\REG_03120_VALOR_RECEITA_ATIVIDADE_PERCENTUAL_FAIXA_B.cs" />
+    <Compile Include="Arquivos\PGDASD\REG_03121_VALOR_RECEITA_ISENCAO_FAIXA_B.cs" />
+    <Compile Include="Arquivos\PGDASD\REG_03122_VALOR_RECEITA_ATIVIDADE_PERCENTUAL_FAIXA_B.cs" />
+    <Compile Include="Arquivos\PGDASD\REG_03130_VALOR_RECEITA_ATIVIDADE_PERCENTUAL_FAIXA_C.cs" />
+    <Compile Include="Arquivos\PGDASD\REG_03131_VALOR_RECEITA_ISENCAO_FAIXA_C.cs" />
+    <Compile Include="Arquivos\PGDASD\REG_03132_VALOR_RECEITA_ATIVIDADE_PERCENTUAL_FAIXA_C.cs" />
+    <Compile Include="Arquivos\PGDASD\REG_03500_FOLHA_SALARIOS.cs" />
+    <Compile Include="Arquivos\PGDASD\REG_04000_PERFIL.cs" />
+    <Compile Include="Arquivos\PGDASD\REG_99999_ENCERRAMENTO_BLOCO.cs" />
+    <Compile Include="Arquivos\PGDASD\REG_AAAAA_ARQUIVO_DIGITAL.cs" />
+    <Compile Include="Arquivos\PGDASD\REG_ZZZZZ_ENCERRAMENTO_ARQUIVO_DIGITAL.cs" />
+    <Compile Include="Graficos\OptanteSimplesNacional_e_MEI.cs" />
+    <Compile Include="Prefeitura.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Usuario.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\04-Infra\PrefeituraConecta.API.Utils\PrefeituraConecta.API.Utils.csproj">
+      <Project>{532e029e-db32-4eb3-8917-871d0ed3d234}</Project>
+      <Name>PrefeituraConecta.API.Utils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
