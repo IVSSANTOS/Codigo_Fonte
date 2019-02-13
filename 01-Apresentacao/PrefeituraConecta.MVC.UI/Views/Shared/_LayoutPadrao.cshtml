@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>Prefeitura Conecta</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
@@ -16,18 +16,18 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Prefeitura Conecta", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     @if (User.Identity.IsAuthenticated)
                     {
+                        @Html.ActionLink("Prefeitura Conecta", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
                         <li>@Html.ActionLink("Painel Principal", "Index", "Painel")</li>
                     }
                     @if (User.IsInRole("Administrador"))
                     {
+                        <li>@Html.ActionLink("Cadastro", "Cadastrar", "Autenticacao")</li>
                         <li>@Html.ActionLink("Usuários", "Index", "CadastroUsuarios")</li>
-
                     }
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
@@ -43,7 +43,6 @@
                     }
                     else
                     {
-                        <li>@Html.ActionLink("Cadastro", "Cadastrar", "Autenticacao")</li>
                         <li>@Html.ActionLink("Login", "Login", "Autenticacao")</li>
                     }
                 </ul>
@@ -54,7 +53,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p align="center">&copy; Copyright @DateTime.Now.Year - Prefeitura Conecta - Todos os direitos reservados.</p>
         </footer>
     </div>
 

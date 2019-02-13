@@ -10,7 +10,7 @@
     @Styles.Render("~/Content/css")
     @* @Scripts.Render("~/bundles/modernizr")*@
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
-    <title>@ViewBag.Title</title>
+    <title>Prefeitura Conecta</title>
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
@@ -69,12 +69,10 @@
         <div class="canvas">
             <div class="menu-left">
 
-                <br />
-                <br />
 
 
                 <div class="row">
-                    <div class="menu">
+                    <div class="sidebar">
 
                         @if (User.Identity.IsAuthenticated)
                         {
@@ -113,27 +111,18 @@
 
 
             <section>
-
-
-
                 <section>
-
-
                     <div class="push-menu">
-                        <a href="#" class="toggle-menu"><span class="fa fa-reorder	fa-2x"></span></a>
+                        <a href="#" class="toggle-menu"><span class="fa fa-reorder" style="font-size:24px;color:black"></span></a>
                     </div>
 
                     @RenderBody()
-
-
                     @if (TempData["ErroAutorizacao"] != null)
                     {
                         <div class="alert alert-danger">
                             @TempData["ErroAutorizacao"]
                         </div>
                     }
-
-
                 </section>
             </section>
 
@@ -183,6 +172,11 @@
             </script>
         </div>
 
+    </div>
+    <div class="container body-content">
+        <footer>
+            <p align="center">&copy; Copyright @DateTime.Now.Year - Prefeitura Conecta - Todos os direitos reservados.</p>
+        </footer>
     </div>
 </body>
 </html>
