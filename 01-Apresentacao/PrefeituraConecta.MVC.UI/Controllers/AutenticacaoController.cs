@@ -124,5 +124,10 @@ namespace PrefeituraConecta.MVC.UI.Controllers
             Request.GetOwinContext().Authentication.SignOut("ApplicationCookie");
             return RedirectToAction("Index", "Home");
         }
+
+        public ActionResult Voltar()
+        {
+            return RedirectToAction("Index", "Home");
+        }
     }
 }

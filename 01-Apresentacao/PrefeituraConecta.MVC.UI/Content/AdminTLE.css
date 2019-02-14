@@ -149,7 +149,7 @@ a {
     a:hover, a:active, a:focus {
         outline: none;
         text-decoration: none;
-        color: #72afd2
+        color: #fff;
     }
 
 .page-header {
@@ -3805,19 +3805,19 @@ table.text-center, table.text-center td, table.text-center th {
 
     .btn-dropbox:focus, .btn-dropbox.focus {
         color: #fff;
-        background-color: #0d6aad;
+        background-color: #fff;
         border-color: rgba(0,0,0,0.2)
     }
 
     .btn-dropbox:hover {
         color: #fff;
-        background-color: #0d6aad;
+        background-color: #fff;
         border-color: rgba(0,0,0,0.2)
     }
 
     .btn-dropbox:active, .btn-dropbox.active, .open > .dropdown-toggle.btn-dropbox {
         color: #fff;
-        background-color: #0d6aad;
+        background-color: #fff;
         border-color: rgba(0,0,0,0.2)
     }
 
