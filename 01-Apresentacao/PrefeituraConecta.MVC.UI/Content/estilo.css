@@ -1,4 +1,5 @@
 ﻿body {
+    overflow: hidden;
 }
 .sidebar {
     position: fixed;
@@ -109,7 +110,7 @@ ul.nav2 li a {
 
 .toggle-menu {
     color: #333;
-    position: absolute;
+    position: relative;
     padding: 2rem 0;
 }
 

@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=11">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <link href="~/Content/AdminTLE.css" rel="stylesheet" />
     <meta http-equiv="Pragma" content="no-cache">
     @Styles.Render("~/Content/css")
     @* @Scripts.Render("~/bundles/modernizr")*@
@@ -16,7 +16,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
     <link href="~/Content/estilo.css" rel="stylesheet" />
-
 
 </head>
 <body>
@@ -46,13 +45,13 @@
                 <ul class="nav navbar-nav navbar-right">
                     @if (User.Identity.IsAuthenticated)
                     {
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">@User.Identity.Name <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li>@Html.ActionLink("Alterar Senha", "AlterarSenha", "Perfil")</li>
-                                <li>@Html.ActionLink("Sair", "Logout", "Autenticacao")</li>
-                            </ul>
-                        </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="~/Utils/Images/default-avatar.png" alt="User Image" class="user-image">  @User.Identity.Name<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Alterar Senha", "AlterarSenha", "Perfil")</li>
+                            <li>@Html.ActionLink("Sair", "Logout", "Autenticacao")</li>
+                        </ul>
+                    </li>
                     }
                     else
                     {
@@ -76,10 +75,9 @@
 
                         @if (User.Identity.IsAuthenticated)
                         {
-
+                            @*<select class="form-control" style="border-right: none;"><option value="14">FRANCO DA ROCHA</option><option value="6">GUARATINGUETÁ</option></select>*@
                             <h2> Franco da Rocha </h2>
                             <ul class="sidebar-nav">
-
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Simples Nacional <span class="caret"></span></a>
                                     <ul class="dropdown-menu">
@@ -92,6 +90,8 @@
                                         </li>
                                     </ul>
                                 </li>
+
+
                                 <li><a href="#">NFS</a></li>
                                 <li><a href="#">Valor Adicionado</a></li>
                                 <li><a href="#">Auditoria</a></li>

@@ -3,125 +3,148 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<div class="container">
-
-    <div class="table">
-
-        <h2>Declarações</h2>
-
-        <div class="row">
-            <div class="col-md-4">
-                <div class="card btn btn-default">
-                    <div class="card-header"><h4>@Html.ActionLink("Empresas", "Index", "Painel") </h4></div>
-                    <div class="card-body">
-                        <h4>R$ 2,0000000000000000</h4>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="card btn btn-default">
-                    <div class="card-header"><h4>@Html.ActionLink("Declarações Transmitidas", "Index", "Painel") </h4></div>
-                    <div class="card-body">
-                        <h4>R$ 2,00</h4>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="card btn btn-default">
-                    <div class="card-header"><h4>@Html.ActionLink("Receita Declarada", "Index", "Painel") </h4></div>
-                    <div class="card-body">
-                        <h4>R$ 2,00</h4>
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<link href="~/Content/AdminTLE.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+@*<link href="~/Content/App.css" rel="stylesheet" />**@
+@*<link href="~/Content/Sky.css" rel="stylesheet" />*@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+<div class="content-wrapper">
+    <section class="content">
+        <div class="box box-solid">
+            <div class="box-body">
+                <div class="tab-content">
+                    <div id="tab_1" class="tab-pane active">
+                        <div class="row">
+                            <div class="col-lg-4 col-xs-12">
+                                <a href="#">
+                                    <div class="small-box">
+                                        <div class="inner paineis">
+                                            <p>Empresas</p>
+                                            <h4>0</h4>
+                                        </div>
+                                        <div class="icon">
+                                            <i class="fa fa-bank"></i>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-lg-4 col-xs-12">
+                                <a href="#">
+                                    <div class="small-box">
+                                        <div class="inner paineis">
+                                            <p>Declarações Transmitidas</p>
+                                            <h4>0</h4>
+                                        </div>
+                                        <div class="icon">
+                                            <i class="ion ion-clipboard"></i>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-lg-4 col-xs-12">
+                                <a href="#">
+                                    <div class="small-box">
+                                        <div class="inner paineis">
+                                            <p>Receita Declarada</p>
+                                            <h4>ISSQN: R$ 0,00</h4>
+                                            <h4>ICMS: R$ 0,00</h4>
+                                        </div>
+                                        <div class="icon">
+                                            <i class="ion ion-cash"></i>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-lg-3 col-xs-12">
+                                <a href="#">
+                                    <div class="small-box">
+                                        <div class="inner paineis">
+                                            <p>Serviços (Sem Retenção)</p>
+                                            <h4>R$ 0,00</h4>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-lg-3 col-xs-12">
+                                <a href="#">
+                                    <div class="small-box">
+                                        <div class="inner paineis">
+                                            <p>Serviços (Com Retenção)</p>
+                                            <h4>R$ 0,00</h4>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-lg-3 col-xs-12">
+                                <a href="#">
+                                    <div class="small-box">
+                                        <div class="inner paineis">
+                                            <p>Serviços (Outros Municípios)</p>
+                                            <h4>R$ 0,00</h4>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-lg-3 col-xs-12">
+                                <a href="#">
+                                    <div class="small-box">
+                                        <div class="inner paineis">
+                                            <p>Serviços (Locação)</p>
+                                            <h4>R$ 0,00</h4>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-lg-3 col-xs-12">
+                                <a href="#">
+                                    <div class="small-box">
+                                        <div class="inner paineis">
+                                            <p>Serviços (Contabilidade)</p>
+                                            <h4>R$ 0,00</h4>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-lg-3 col-xs-12">
+                                <a href="#">
+                                    <div class="small-box">
+                                        <div class="inner paineis">
+                                            <p>Serviços (Exterior)</p>
+                                            <h4>R$ 0,00</h4>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-lg-3 col-xs-12">
+                                <a href="#">
+                                    <div class="small-box">
+                                        <div class="inner paineis">
+                                            <p>Comércio (Mercado Interno)</p>
+                                            <h4>R$ 0,00</h4>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-lg-3 col-xs-12">
+                                <a href="#">
+                                    <div class="small-box">
+                                        <div class="inner paineis">
+                                            <p>Comércio (Exterior)</p>
+                                            <h4>R$ 0,00</h4>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-
-        <br />
-        <br />
-
-        <div class="row">
-            <div class="col-md-3">
-                <div class="card btn btn-default">
-                    <div class="card-header"><h4>@Html.ActionLink("Serviços(Sem Retenção)", "Index", "Painel") </h4></div>
-                    <div class="card-body">
-                        <h4>R$ 2,00</h4>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3">
-                <div class="card btn btn-default">
-                    <div class="card-header"><h4>@Html.ActionLink("Serviços(Com Retenção)", "Index", "Painel") </h4></div>
-                    <div class="card-body">
-                        <h4>R$ 2,00</h4>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3">
-                <div class="card btn btn-default">
-                    <div class="card-header"><h4>@Html.ActionLink("Serviços(Outros Municípios)", "Index", "Painel") </h4></div>
-                    <div class="card-body">
-                        <h4>R$ 2,00</h4>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card btn btn-default">
-                    <div class="card-header"><h4>@Html.ActionLink("Serviços(Locação)", "Index", "Painel") </h4></div>
-                    <div class="card-body">
-                        <h4>R$ 2,00</h4>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-        <br />
-        <br />
-
-        <div class="row">
-            <div class="col-md-3">
-                <div class="card btn btn-default">
-                    <div class="card-header"><h4>@Html.ActionLink("Serviços(Contabilidade)", "Index", "Painel") </h4></div>
-                    <div class="card-body">
-                        <h4>R$ 2,00</h4>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3">
-                <div class="card btn btn-default">
-                    <div class="card-header"><h4>@Html.ActionLink("Serviços(Exterior)", "Index", "Painel") </h4></div>
-                    <div class="card-body">
-                        <h4>R$ 2,00</h4>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3">
-                <div class="card btn btn-default">
-                    <div class="card-header"><h4>@Html.ActionLink("Serviços(Mercado Interno)", "Index", "Painel") </h4></div>
-                    <div class="card-body">
-                        <h4>R$ 2,00</h4>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card btn btn-default">
-                    <div class="card-header"><h4>@Html.ActionLink("Serviços(Mercado Externo)", "Index", "Painel") </h4></div>
-                    <div class="card-body">
-                        <h4>R$ 2,00</h4>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    </section>
 </div>
 
+
 @*@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}*@
+        @Scripts.Render("~/bundles/jqueryval")
+    }*@
