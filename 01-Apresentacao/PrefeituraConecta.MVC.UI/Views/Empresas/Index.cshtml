@@ -1,0 +1,124 @@
+﻿@model IEnumerable<PrefeituraConecta.MVC.UI.Models.VALOR_APURADO_EMPRESAS_MODEL>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    WebGrid objWebGrid = new WebGrid(Model, rowsPerPage: 10, canPage: true);//allowing rowsperpage,paging allow or not
+}
+
+<br />
+<br />
+<br />
+
+<div class="container">
+
+    <h3>Empresas</h3>
+    <br />
+
+
+    <div class="panel panel-default">
+        <div class="panel-body">
+
+            <div class="form-inline">
+
+                @using (Html.BeginForm("Index", "Empresas", FormMethod.Post))
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div>
+                        <div class="row">
+                            <div class="col-md-3 form-group">
+                                <label>Consulta</label>
+                                <select id="filtro_tipo" name="tipo" class="form-control pull-right">
+                                    <option value="PADRÃO">Incidência de ISSQN e ICMS</option>
+                                    <option value="ISSQN">Incidência de ISSQN</option>
+                                    <option value="ICMS">Incidência de ICMS</option>
+                                </select>
+                            </div> 
+                            <div class="col-md-3 form-group">
+                                <label>Consolidado por</label>
+                                <select id="filtro_consolidada" name="tipo" class="form-control pull-right">
+                                    <option value="matriz">Matriz</option>
+                                    <option value="cnpj">CNPJ</option>
+                                    <option value="declaracao">Declaração</option>
+                                </select>
+                            </div> 
+                            <div class="col-md-3">
+                                <label>Tipo de Empresa</label>
+                                <select name="tipo" class="form-control pull-right">
+                                    <option value="">--Todas--</option>
+                                    <option value="estabelecida">Estabelecidas</option>
+                                    <option value="nao_estabelecida">Não Estabelecidas</option>
+                                </select>
+                            </div> 
+                            <div class="col-md-3">
+                                <label>Tipo da Declaração</label>
+                                <select name="tipo" class="form-control pull-right">
+                                <option value="ultima">Última (Apuração/Retificação)</option> 
+                                <option value="primeira">Primeira (Apuração/Original)</option>
+                                <option value="">--Todas--</option></select>
+                            </div>
+                        </div> 
+                        <div class="form-group">
+                            <div class="col-md-3">
+                                <label>Regime</label>
+                                <select name="tipo" class="form-control pull-right">
+                                    <option value="">--Todos--</option>
+                                    <option value="0">Competência</option>
+                                    <option value="1">Caixa</option>
+                                </select>
+                            </div> 
+                        <div class="col-md-3">
+                                <label>P. de Apuração (De)</label> <input placeholder="Ex. 01/2018" type="text" class="form-control">
+                            </div> 
+                        <div class="col-md-3">
+                                <label>P. de Apuração (Até)</label>
+                                <input placeholder="Ex. 12/2018" type="text" class="form-control">
+                            </div> 
+                        <div class="col-md-3">
+                                <label>CNPJ</label>
+                                <input placeholder="Somente números" name="filtro_cnpj" type="text" class="form-control">
+                            </div>
+                        </div> 
+                        
+                        <div class="row">
+                            <div class="col-md-12" style="text-align: right;">
+                               
+                                <a href="javascript:void(0)" class="btn btn-default"><i class="fa fa-search"></i> Consultar</a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                }
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+    @objWebGrid.GetHtml(
+
+    tableStyle: "table table-striped table-bordered table-sm",
+    headerStyle:"Grid-Header",
+    alternatingRowStyle:"Grid-alt",
+    selectedRowStyle:"Grid-selected",
+    rowStyle: "Grid-rowstyle",
+    footerStyle: "Grid-Footer",
+    mode: WebGridPagerModes.All,
+    columns:
+    objWebGrid.Columns
+    (
+       objWebGrid.Column(columnName: "CNPJMATRIZ", header: "CNPJ (Matriz)"),
+       objWebGrid.Column(columnName: "NOME", header: "Razão Social"),
+       objWebGrid.Column(columnName: "RPA", header: "Receita Total"),
+       objWebGrid.Column(columnName: "VALOR_APURADO_DE_ISS", header: "Inc. de ISSQN"),
+       objWebGrid.Column(columnName: "VALOR_APURADO_DE_ICMS", header: "Inc. de ICMS")
+       )
+    )
+</div>
+
+

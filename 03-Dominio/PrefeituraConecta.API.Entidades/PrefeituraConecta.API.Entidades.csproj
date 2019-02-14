@@ -95,6 +95,7 @@
     <Compile Include="Prefeitura.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Usuario.cs" />
+    <Compile Include="VALOR_APURADO_EMPRESAS.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\04-Infra\PrefeituraConecta.API.Utils\PrefeituraConecta.API.Utils.csproj">
