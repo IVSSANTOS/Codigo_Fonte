@@ -1,9 +1,11 @@
 ﻿body {
     background-image: url('../Utils/Images/Imagem2.jpg');
+    opacity: 0.5;
+    filter: alpha(opacity=50);
     background-repeat: no-repeat;
     background-size: cover;
     position: absolute;
- }
+}
 
 #rodape footer{
     padding-top: 31em;
