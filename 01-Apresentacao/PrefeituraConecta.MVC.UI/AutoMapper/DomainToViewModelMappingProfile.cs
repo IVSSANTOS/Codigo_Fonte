@@ -24,6 +24,7 @@ namespace PrefeituraConecta.MVC.UI.AutoMapper
         {
             this.CreateMap<Usuario, PrefeituraConecta.API.Entidades.Usuario>();
             this.CreateMap<OptanteSimplesNacional_e_MEI_Model, PrefeituraConecta.API.Entidades.Graficos.OptanteSimplesNacional_e_MEI>();
+            this.CreateMap<FiltroSimplesNacionalModel, PrefeituraConecta.API.Entidades.FiltroSimplesNacional>();
         }
     }
 }

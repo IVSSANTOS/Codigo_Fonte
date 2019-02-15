@@ -61,6 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DBConfiguration.cs" />
+    <Compile Include="FiltroSimplesNacional_DB.cs" />
     <Compile Include="PrefeituraDB.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SimplesNacionaDB.cs" />

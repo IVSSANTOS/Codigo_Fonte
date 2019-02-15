@@ -175,6 +175,7 @@
     <Compile Include="Controllers\CadastroUsuariosController.cs" />
     <Compile Include="Controllers\DeclaracoesController.cs" />
     <Compile Include="Controllers\EmpresasController.cs" />
+    <Compile Include="Controllers\FiltrosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PainelController.cs" />
     <Compile Include="Controllers\PerfilController.cs" />
@@ -182,6 +183,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\FiltroSimplesNacionalModel.cs" />
     <Compile Include="Models\Graficos\OptanteSimplesNacional_e_MEI_Model.cs" />
     <Compile Include="Models\TipoUsuario.cs" />
     <Compile Include="Models\Usuario.cs" />
@@ -201,6 +203,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\estilo.css" />
+    <Content Include="Content\estilo_home.css" />
     <Content Include="Content\icon.css" />
     <Content Include="Content\Sky.css" />
     <Content Include="favicon.ico" />
@@ -251,6 +254,7 @@
     <Content Include="Views\Declaracoes\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutPadrao.cshtml" />
     <Content Include="Views\Empresas\Index.cshtml" />
+    <Content Include="Views\Filtros\FiltroSimplesNacional.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

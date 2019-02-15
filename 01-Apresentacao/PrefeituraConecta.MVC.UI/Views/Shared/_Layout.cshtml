@@ -85,24 +85,37 @@
                                             <a class="test" href="#">Painéis <span class="caret"></span></a>
                                             <ul class="dropdown-menu">
                                                 <li>@Html.ActionLink("Gráficos", "Index", "Painel")</li>
+                                                <li>@Html.ActionLink("Filtros", "FiltroSimplesNacional", "Filtros")</li>
                                                 <li>@Html.ActionLink("Declarações", "Index", "Declaracoes")</li>
+                                                <li> <a href="#">Malha Fiscal</a></li>
+                                                <li> <a href="#">DTE/SN</a></li>
                                             </ul>
                                         </li>
                                     </ul>
                                 </li>
 
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">NFS <span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li> <a href="#">Painéis</a></li>
+                                        <li> <a href="#">Consultas</a></li>
+                                    </ul>
+                                </li>
 
-                                <li><a href="#">NFS</a></li>
+
                                 <li><a href="#">Valor Adicionado</a></li>
                                 <li><a href="#">Auditoria</a></li>
                                 <li><a href="#">ISS</a></li>
                                 <li><a href="#">Cadastro</a></li>
-                                <li><a href="#">Simulador</a></li>
 
-
-
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Simulador <span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li> <a href="#">Simples</a></li>
+                                        <li> <a href="#">Completo</a></li>
+                                    </ul>
+                                </li>
                             </ul>
-
                         }
 
                     </div>
