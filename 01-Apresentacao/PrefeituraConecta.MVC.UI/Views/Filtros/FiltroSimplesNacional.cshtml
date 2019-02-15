@@ -1,124 +1,68 @@
-﻿
+﻿@model PrefeituraConecta.MVC.UI.Models.FiltroSimplesNacionalModel
+
 @{
     ViewBag.Title = "FiltroSimplesNacional";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>FiltroSimplesNacional</h2>
 
-@*<br />
-<br />
-<br />
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>FiltroSimplesNacionalModel</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.ID_CONSULTA, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ID_CONSULTA, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ID_CONSULTA, "", new { @class = "text-danger" })
+            </div>
+        </div>
 
-<div class="container">
+        <div class="form-group">
+            @Html.LabelFor(model => model.Consulta, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Consulta, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Consulta, "", new { @class = "text-danger" })
+            </div>
+        </div>
 
-    <h3>Empresas</h3>
-    <br />
+        <div class="form-group">
+            @Html.LabelFor(model => model.ConsolidadoPor, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ConsolidadoPor, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ConsolidadoPor, "", new { @class = "text-danger" })
+            </div>
+        </div>
 
+        <div class="form-group">
+            @Html.LabelFor(model => model.TipoEmpresa, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.TipoEmpresa, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.TipoEmpresa, "", new { @class = "text-danger" })
+            </div>
+        </div>
 
-    <div class="panel panel-default">
-        <div class="panel-body">
+        <div class="form-group">
+            @Html.LabelFor(model => model.TipoDeclaracao, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.TipoDeclaracao, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.TipoDeclaracao, "", new { @class = "text-danger" })
+            </div>
+        </div>
 
-            <div class="form-inline">
-
-                @using (Html.BeginForm("Index", "Empresas", FormMethod.Post))
-                {
-                    @Html.AntiForgeryToken()
-
-                    <div>
-                        <div class="row">
-                            <div class="col-md-3 form-group">
-                                <label>Consulta</label>
-                                <select id="filtro_tipo" name="tipo" class="form-control pull-right">
-                                    <option value="PADRÃO">Incidência de ISSQN e ICMS</option>
-                                    <option value="ISSQN">Incidência de ISSQN</option>
-                                    <option value="ICMS">Incidência de ICMS</option>
-                                </select>
-                            </div>
-                            <div class="col-md-3 form-group">
-                                <label>Consolidado por</label>
-                                <select id="filtro_consolidada" name="tipo" class="form-control pull-right">
-                                    <option value="matriz">Matriz</option>
-                                    <option value="cnpj">CNPJ</option>
-                                    <option value="declaracao">Declaração</option>
-                                </select>
-                            </div>
-                            <div class="col-md-3">
-                                <label>Tipo de Empresa</label>
-                                <select name="tipo" class="form-control pull-right">
-                                    <option value="">--Todas--</option>
-                                    <option value="estabelecida">Estabelecidas</option>
-                                    <option value="nao_estabelecida">Não Estabelecidas</option>
-                                </select>
-                            </div>
-                            <div class="col-md-3">
-                                <label>Tipo da Declaração</label>
-                                <select name="tipo" class="form-control pull-right">
-                                    <option value="ultima">Última (Apuração/Retificação)</option>
-                                    <option value="primeira">Primeira (Apuração/Original)</option>
-                                    <option value="">--Todas--</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-md-3">
-                                <label>Regime</label>
-                                <select name="tipo" class="form-control pull-right">
-                                    <option value="">--Todos--</option>
-                                    <option value="0">Competência</option>
-                                    <option value="1">Caixa</option>
-                                </select>
-                            </div>
-                            <div class="col-md-3">
-                                <label>P. de Apuração (De)</label> <input placeholder="Ex. 01/2018" type="text" class="form-control">
-                            </div>
-                            <div class="col-md-3">
-                                <label>P. de Apuração (Até)</label>
-                                <input placeholder="Ex. 12/2018" type="text" class="form-control">
-                            </div>
-                            <div class="col-md-3">
-                                <label>CNPJ</label>
-                                <input placeholder="Somente números" name="filtro_cnpj" type="text" class="form-control">
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-12" style="text-align: right;">
-
-                                <a href="javascript:void(0)" class="btn btn-default"><i class="fa fa-search"></i> Consultar</a>
-                            </div>
-                        </div>
-                    </div>
-
-
-                }
-
-
-
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
             </div>
         </div>
     </div>
+}
 
-
-
-    @objWebGrid.GetHtml(
-
-    tableStyle: "table table-striped table-bordered table-sm",
-    headerStyle:"Grid-Header",
-    alternatingRowStyle:"Grid-alt",
-    selectedRowStyle:"Grid-selected",
-    rowStyle: "Grid-rowstyle",
-    footerStyle: "Grid-Footer",
-    mode: WebGridPagerModes.All,
-    columns:
-    objWebGrid.Columns
-    (
-       objWebGrid.Column(columnName: "CNPJMATRIZ", header: "CNPJ (Matriz)"),
-       objWebGrid.Column(columnName: "NOME", header: "Razão Social"),
-       objWebGrid.Column(columnName: "RPA", header: "Receita Total"),
-       objWebGrid.Column(columnName: "VALOR_APURADO_DE_ISS", header: "Inc. de ISSQN"),
-       objWebGrid.Column(columnName: "VALOR_APURADO_DE_ICMS", header: "Inc. de ICMS")
-       )
-    )
-</div>*@
-
-
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
