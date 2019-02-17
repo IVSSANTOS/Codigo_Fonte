@@ -183,6 +183,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\FiltroNFSModel.cs" />
     <Compile Include="Models\FiltroSimplesNacionalModel.cs" />
     <Compile Include="Models\Graficos\OptanteSimplesNacional_e_MEI_Model.cs" />
     <Compile Include="Models\TipoUsuario.cs" />
@@ -255,6 +256,7 @@
     <Content Include="Views\Shared\_LayoutPadrao.cshtml" />
     <Content Include="Views\Empresas\Index.cshtml" />
     <Content Include="Views\Filtros\FiltroSimplesNacional.cshtml" />
+    <Content Include="Views\Filtros\FiltroNFS.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

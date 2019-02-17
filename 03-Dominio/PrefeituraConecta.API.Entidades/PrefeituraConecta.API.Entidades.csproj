@@ -91,6 +91,7 @@
     <Compile Include="Arquivos\PGDASD\REG_99999_ENCERRAMENTO_BLOCO.cs" />
     <Compile Include="Arquivos\PGDASD\REG_AAAAA_ARQUIVO_DIGITAL.cs" />
     <Compile Include="Arquivos\PGDASD\REG_ZZZZZ_ENCERRAMENTO_ARQUIVO_DIGITAL.cs" />
+    <Compile Include="FiltroNFS.cs" />
     <Compile Include="FiltroSimplesNacional.cs" />
     <Compile Include="Graficos\OptanteSimplesNacional_e_MEI.cs" />
     <Compile Include="Prefeitura.cs" />

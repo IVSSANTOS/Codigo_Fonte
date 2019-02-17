@@ -8,11 +8,18 @@ namespace PrefeituraConecta.MVC.UI.Controllers
 {
     public class FiltrosController : Controller
     {
-        // GET: Filtros
         [Authorize]
         public ActionResult FiltroSimplesNacional()
         {
             return View();
         }
+
+        [Authorize]
+        public ActionResult FiltroNFS()
+        {
+            return View();
+        }
+
+
     }
 }

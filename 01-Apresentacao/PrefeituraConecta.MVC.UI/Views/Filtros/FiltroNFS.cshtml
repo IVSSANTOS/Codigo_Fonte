@@ -1,0 +1,165 @@
+﻿@model PrefeituraConecta.MVC.UI.Models.FiltroNFSModel
+
+@{
+    ViewBag.Title = "FiltroNFS";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="content-wrapper" style="min-height: 419px;">
+    <section class="content">
+        <div class="row">
+            <div class="col-md-12">
+                <div data-v-bfafd06e="" class="modal-mask" style="display: none;"><div data-v-bfafd06e="" class="modal-container"><div data-v-bfafd06e="" class="modal-header"><h3 data-v-bfafd06e="">Salvar Consulta</h3></div> <div data-v-bfafd06e="" class="modal-body"><div data-v-bfafd06e="" class="row"><div data-v-bfafd06e="" class="col-md-12"><label data-v-bfafd06e="">Nome da Consulta</label> <input data-v-bfafd06e="" type="text" class="form-control"></div></div></div> <div data-v-bfafd06e="" class="modal-footer"><div data-v-bfafd06e="" class="text-right" style="float: right;"><button data-v-bfafd06e="" class="btn btn-default"><i data-v-bfafd06e="" class="fa fa-close"></i> Fechar</button> <button data-v-bfafd06e="" class="btn btn-default"><i data-v-bfafd06e="" class="fa fa-save"></i> Salvar e Consultar</button></div></div></div></div> <div><!----> <!----></div> <div class="nav-tabs-custom">
+                    <ul class="nav nav-tabs"><li class="active"><a href="#tab_1" data-toggle="tab"><i class="fa fa-filter"></i> Filtros</a></li> <li><a href="#tab_2" data-toggle="tab"><i class="fa fa-search"></i> Resultado da Consulta</a></li> <li><a href="#tab_3" data-toggle="tab"><i class="fa fa-save"></i> Consultas Salvas</a></li></ul> <div class="tab-content">
+                        <div id="tab_1" class="tab-pane active"><div class="row"><div class="col-md-4 form-group"><label>Consolidado por</label> <select id="filtro_consolidada" class="form-control pull-right"><option value="prestador">Prestador</option> <option value="tomador">Tomador</option></select></div> <div class="col-md-4"><label>Tomador</label> <select class="form-control pull-right"><option value="">--Todos--</option> <option value="estabelecido">Estabelecidos</option> <option value="nao_estabelecido">Não Estabelecidos</option></select></div> <div class="col-md-4"><label>Pessoa Tomadora</label> <select class="form-control pull-right"><option value="">--Todos--</option> <option value="juridica">Jurídica</option> <option value="fisica">Física</option> <option value="nao_indetificada">Não Identificada</option></select></div></div> <div class="row form-group"><div class="col-md-2"><label>Período por</label> <select class="form-control pull-right"><option value="data_emissao">Data de Emissão</option> <option value="competencia">Competência</option></select></div> <div class="col-md-2"><label>Dt. Emissão (De)</label> <input placeholder="Ex. 01/01/2018" type="text" class="form-control"></div> <div class="col-md-2"><label>Dt. Emissão (Até)</label> <input placeholder="Ex. 31/12/2018" type="text" class="form-control"></div> <div class="col-md-2" style="display: none;"><label>Competência (De)</label> <input placeholder="Ex. 01/2018" type="text" class="form-control"></div> <div class="col-md-2" style="display: none;"><label>Competência (Até)</label> <input placeholder="Ex. 12/2018" type="text" class="form-control"></div> <div class="col-md-2"><label>Status</label> <select class="form-control pull-right"><option value="">--Todos--</option> <option value="valida">Válidas</option> <option value="cancelada">Canceladas</option> <option value="substituta">Substitutas</option></select></div> <div class="col-md-2"><label> Número da Nota </label> <input placeholder="Somente números" name="filtro_numero" type="text" class="form-control"></div> <div class="col-md-2"><label>CNPJ </label> <input placeholder="Somente números" name="filtro_documento" type="text" class="form-control"></div></div> <div class="row form-group"><div class="col-md-4"><label>Regime Tributário</label> <div style="height: 241px; background-color: rgb(248, 248, 248); padding: 10px;"><input type="checkbox"> Normal<br> <input type="checkbox"> Simples<br> <input type="checkbox"> Mei<br> <br></div></div> <div class="col-md-4"><label>Natureza da Operação (ISSQN)</label> <div style="height: 241px; background-color: rgb(248, 248, 248); padding: 10px;"><input type="checkbox"> Tributação no município<br> <input type="checkbox"> Tributação fora do município<br> <input type="checkbox"> Isenção<br> <input type="checkbox"> Imune<br> <input type="checkbox"> Exigibilidade suspensa por decisão judicial<br> <input type="checkbox"> Exigibilidade suspensa por procedimento administrativo<br> <br> <br></div></div> <div class="col-md-4"><label>Benefício</label> <div style="height: 241px; background-color: rgb(248, 248, 248); padding: 10px;"><input type="checkbox"> Desconto Incondicionado<br> <input type="checkbox"> Desconto Condicionado<br> <input type="checkbox"> Deduções Permitidas em Lei<br> <br></div></div></div> <div class="row"><div class="col-md-12" style="text-align: right;"><a href="javascript:void(0)" class="btn btn-default"><i class="fa fa-save"></i> Salvar e Consultar</a> <a href="javascript:void(0)" class="btn btn-default"><i class="fa fa-search"></i> Consultar</a></div></div></div> <div id="tab_2" class="tab-pane">
+                            <div class="box box-default">
+                                <div class="box-header with-border"><h3 class="box-title" style="font-size: 14px;">Parâmetros Utilizados</h3> <div class="box-tools pull-right"><button type="button" data-widget="collapse" class="btn btn-box-tool"><i class="fa fa-minus"></i></button> <button type="button" data-widget="remove" class="btn btn-box-tool"><i class="fa fa-times"></i></button></div></div> <div class="box-body">
+                                    <div class="row" style="font-size: 12px; margin-bottom: 20px;"><div class="col-sm-8"><div style="text-align: right;"><strong>PREFEITURA MUNICIPAL DE FRANCO DA ROCHA</strong></div></div> <div class="col-sm-4"><div style="text-align: right;"><span>02/17/2019 18:17</span></div></div></div> <div class="row" style="font-size: 12px;">
+                                        <div class="col-sm-3">
+                                            <strong>Consolidada por: </strong> PRESTADOR
+                                        </div> <div class="col-sm-3">
+                                            <strong>Tomador: </strong> TODOS
+                                        </div> <div class="col-sm-3">
+                                            <strong>Pessoa Tomadora: </strong> TODAS
+                                        </div> <div class="col-sm-3">
+                                            <strong>Status: </strong> TODAS
+                                        </div>
+                                    </div> <div class="row" style="font-size: 12px; margin-top: 10px;">
+                                        <div class="col-sm-3">
+                                            <strong>Número: </strong> NÃO INFORMADO
+                                        </div> <div class="col-sm-3">
+                                            <strong>CPF/CNPJ: </strong> NÃO INFORMADO
+                                        </div> <div class="col-sm-3">
+                                            <strong>Dt. Emissão: </strong> NÃO INFORMADO
+                                        </div> <div class="col-sm-3">
+                                            <strong>Competência: </strong>  NÃO INFORMADO
+                                        </div>
+                                    </div> <!---->
+                                </div>
+                            </div> <div class="row">
+                                <div class="col-sm-12">
+                                    <div data-v-5c9d8de4="">
+                                        <div data-v-5c9d8de4="" class="row" style="margin-top: 15px; font-size: 12px;">
+                                            <!----> <div data-v-5c9d8de4="" class="col-sm-12 table-responsive">
+                                                <table data-v-5c9d8de4="" role="grid" class="table table-bordered table-striped"><thead data-v-5c9d8de4=""><tr data-v-5c9d8de4="" role="row"><th data-v-5c9d8de4="">CNPJ <a data-v-5c9d8de4="" href="javascript:void(0)" style="float: right;"><i data-v-5c9d8de4="" class="fa fa-sort-amount-asc"></i></a></th> <th data-v-5c9d8de4="">IM <a data-v-5c9d8de4="" href="javascript:void(0)" style="float: right;"><i data-v-5c9d8de4="" class="fa fa-sort-amount-asc"></i></a></th> <th data-v-5c9d8de4="">Razão Social <a data-v-5c9d8de4="" href="javascript:void(0)" style="float: right;"><i data-v-5c9d8de4="" class="fa fa-sort-amount-asc"></i></a></th> <th data-v-5c9d8de4="">Valor do Serviço <a data-v-5c9d8de4="" href="javascript:void(0)" style="float: right;"><i data-v-5c9d8de4="" class="fa fa-sort-amount-asc"></i></a></th> <th data-v-5c9d8de4="">Base de Cálculo <a data-v-5c9d8de4="" href="javascript:void(0)" style="float: right;"><i data-v-5c9d8de4="" class="fa fa-sort-amount-asc"></i></a></th> <th data-v-5c9d8de4="">Valor do ISSQN <a data-v-5c9d8de4="" href="javascript:void(0)" style="float: right;"><i data-v-5c9d8de4="" class="fa fa-sort-amount-asc"></i></a></th></tr></thead> <tbody data-v-5c9d8de4=""></tbody> <tfoot data-v-5c9d8de4=""><tr data-v-5c9d8de4="" style="font-weight: bold;"><td data-v-5c9d8de4="" colspan="3" style="text-align: right;">Totais</td> <td data-v-5c9d8de4="">0,00</td> <td data-v-5c9d8de4="">0,00</td> <td data-v-5c9d8de4="">0,00</td></tr></tfoot></table> <div data-v-5c9d8de4="" class="row">
+                                                    <div data-v-5c9d8de4="" class="col-sm-5">
+                                                        Mostrando  até  de  registros encontrados.
+                                                    </div> <div data-v-5c9d8de4="" class="col-sm-7" style="text-align: right;"><!----></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> <!----> <!----> <!---->
+                                </div>
+                            </div>
+                        </div> <div id="tab_3" class="tab-pane">
+                            <div data-v-36df5b24="">
+                                <div data-v-36df5b24="" class="row" style="margin-top: 15px;">
+                                    <!----> <div data-v-36df5b24="" class="col-sm-12 table-responsive" style="">
+                                        <table data-v-36df5b24="" role="grid" class="table table-bordered table-striped"><thead data-v-36df5b24=""><tr data-v-36df5b24="" role="row"><th data-v-36df5b24="" style="width: 10%;">ID</th> <th data-v-36df5b24="" style="width: 75%;">Nome da Consulta</th> <th data-v-36df5b24="" style="width: 15%;">Ações</th></tr></thead> <tbody data-v-36df5b24=""></tbody></table> <div data-v-36df5b24="" class="row">
+                                            <div data-v-36df5b24="" class="col-sm-5">
+                                                Mostrando  até  de 0 registros encontrados.
+                                            </div> <div data-v-36df5b24="" class="col-sm-7" style="text-align: right;"><!----></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+@*<h2>FiltroNFS</h2>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>FiltroNFSModel</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.ConsolidadoPor, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ConsolidadoPor, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ConsolidadoPor, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Tomador, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Tomador, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Tomador, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.PessoaTomadora, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.PessoaTomadora, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.PessoaTomadora, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.PeriodoPor, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.PeriodoPor, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.PeriodoPor, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DtEmissaoDe, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.DtEmissaoDe, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DtEmissaoDe, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DtEmissaoAte, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.DtEmissaoAte, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DtEmissaoAte, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Status, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Status, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Status, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.NumeroNota, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.NumeroNota, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.NumeroNota, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CNPJ, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CNPJ, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.CNPJ, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>*@

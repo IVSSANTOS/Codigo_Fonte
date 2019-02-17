@@ -516,7 +516,7 @@ a {
                 margin-right: 3px
             }
 
-.sidebar-menu {
+./*sidebar-menu {
     list-style: none;
     margin: 0;
     padding: 0
@@ -576,7 +576,7 @@ a {
 
     .sidebar-menu .active > .treeview-menu {
         display: block
-    }
+    }*/
 
 @media (min-width:768px) {
     .sidebar-mini.sidebar-collapse .content-wrapper, .sidebar-mini.sidebar-collapse .right-side, .sidebar-mini.sidebar-collapse .main-footer {
@@ -951,7 +951,7 @@ a {
                 color: #5e5e5e
             }
 
-.dropdown-menu {
+/*.dropdown-menu {
     box-shadow: none;
     border-color: #eee
 }
@@ -971,7 +971,7 @@ a {
 
     .dropdown-menu > .divider {
         background-color: #eee
-    }
+    }*/
 
 .navbar-nav > .notifications-menu > .dropdown-menu, .navbar-nav > .messages-menu > .dropdown-menu, .navbar-nav > .tasks-menu > .dropdown-menu {
     width: 280px;
