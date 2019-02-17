@@ -1,84 +1,219 @@
 ﻿@model PrefeituraConecta.MVC.UI.Models.FiltroSimplesNacionalModel
 
 @{
+    /**/
+
     ViewBag.Title = "FiltroSimplesNacional";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>FiltroSimplesNacional</h2>
+<h2>Filtro Simples Nacional</h2>
 
-@using (Html.BeginForm()) 
+<link href="~/Content/AdminTLE.css" rel="stylesheet" />
+
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>FiltroSimplesNacionalModel</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.ID_CONSULTA, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.ID_CONSULTA, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.ID_CONSULTA, "", new { @class = "text-danger" })
+
+
+
+<section class="content">
+    <div class="tab-content">
+        <div id="tab_1" class="tab-pane active">
+            <div class="row">
+                <div class="col-md-3 form-group">
+                    <label>Consulta</label>
+                    <select id="filtro_tipo" name="tipo" class="form-control pull-right">
+                        <option value="PADRÃO">Incidência de ISSQN e ICMS</option>
+                        <option value="ISSQN">Incidência de ISSQN</option>
+                        <option value="ICMS">Incidência de ICMS</option>
+                    </select>
+                </div>
+                <div class="col-md-3 form-group">
+                    <label>Consolidado por</label>
+                    <select id="filtro_consolidada" name="tipo" class="form-control pull-right">
+                        <option value="matriz">Matriz</option>
+                        <option value="cnpj">CNPJ</option>
+                        <option value="declaracao">Declaração</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label>Tipo de Empresa</label>
+                    <select name="tipo" class="form-control pull-right">
+                        <option value="">--Todas--</option>
+                        <option value="estabelecida">Estabelecidas</option>
+                        <option value="nao_estabelecida">Não Estabelecidas</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label>Tipo da Declaração</label>
+                    <select name="tipo" class="form-control pull-right">
+                        <option value="ultima">Última (Apuração/Retificação)</option>
+                        <option value="primeira">Primeira (Apuração/Original)</option>
+                        <option value="">--Todas--</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-3">
+                    <label>Regime</label>
+                    <select name="tipo" class="form-control pull-right">
+                        <option value="">--Todos--</option>
+                        <option value="0">Competência</option>
+                        <option value="1">Caixa</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label>P. de Apuração (De)</label>
+                    <input placeholder="Ex. 01/2018" type="text" class="form-control">
+                </div>
+                <div class="col-md-3">
+                    <label>P. de Apuração (Até)</label>
+                    <input placeholder="Ex. 12/2018" type="text" class="form-control">
+                </div>
+                <div class="col-md-3">
+                    <label>CNPJ</label>
+                    <input placeholder="Somente números" name="filtro_cnpj" type="text" class="form-control">
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-4">
+                    <label>Situação Especial</label>
+                    <div style="height: 241px; background-color: rgb(248, 248, 248); padding: 10px;">
+                        <input type="checkbox">
+                        Não Informado
+                        <br>
+                        <input type="checkbox">
+                        Imunidade
+                        <br>
+                        <input type="checkbox">
+                        Exigibilidade suspensa
+                        <br>
+                        <input type="checkbox">
+                        Lançamento de Ofício
+                        <br> <!----> <!---->
+                        <div><input type="checkbox"> Isenção<br> <input type="checkbox"> Redução<br> <input type="checkbox"> Retenção tributária<br></div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <label>Com valor maior que zero na(s) coluna(s)</label>
+                    <div style="height: 241px; overflow: auto; background-color: rgb(248, 248, 248); padding: 10px;">
+                        <input type="checkbox">
+                        Receita Total
+                        <br>
+                        <div>
+                            <input type="checkbox">
+                            Inc. de ISSQN
+                            <br> <input type="checkbox">
+                            Inc. de ICMS
+                            <br>
+                        </div> <!----> <!---->
+                        <input type="checkbox"> Apenas as zeradas<br>
+                    </div>
+                </div> <div class="col-md-4"><label>Mostrar as colunas: </label> <div style="height: 241px; overflow: auto; background-color: rgb(248, 248, 248); padding: 10px;"><input type="checkbox"> CNPJ <br> <input type="checkbox"> Razão Social <br> <!----> <input type="checkbox"> Receita Total <br> <div><input type="checkbox"> Inc. de ISSQN <br> <input type="checkbox"> Inc. de ICMS <br></div> <!----> <!----></div></div>
             </div>
         </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Consulta, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Consulta, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Consulta, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.ConsolidadoPor, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.ConsolidadoPor, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.ConsolidadoPor, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.TipoEmpresa, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.TipoEmpresa, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.TipoEmpresa, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.TipoDeclaracao, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.TipoDeclaracao, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.TipoDeclaracao, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group input-group-sm">
-            @Html.LabelFor(model => model.PeriodoApuracaoDe, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.TextBoxFor(model => model.PeriodoApuracaoDe, new { htmlAttributes = new { @class = "form-control datepicker" } })
-                @Html.ValidationMessageFor(model => model.PeriodoApuracaoDe, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.PeriodoApuracaoAte, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.PeriodoApuracaoAte, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.PeriodoApuracaoAte, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <i class="fa fa-search">
+                    <input type="submit" value="Consultar" class="btn btn-default" />
+                </i>
             </div>
         </div>
     </div>
-}
+</section>
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
+    @*<section class="content">
+        <div class="tab-content">
+            <div id="tab_1" class="tab-pan
+                 e active">
+                <div class="row">
+                    <hr />
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.ID_CONSULTA, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.ID_CONSULTA, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.ID_CONSULTA, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Consulta, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Consulta, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Consulta, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.ConsolidadoPor, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.ConsolidadoPor, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.ConsolidadoPor, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.TipoEmpresa, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.TipoEmpresa, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.TipoEmpresa, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.TipoDeclaracao, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.TipoDeclaracao, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.TipoDeclaracao, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Regime, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Regime, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Regime, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.PeriodoApuracaoDe, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.PeriodoApuracaoDe, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.PeriodoApuracaoDe, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.PeriodoApuracaoAte, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.PeriodoApuracaoAte, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.PeriodoApuracaoAte, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.CNPJ, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.CNPJ, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.CNPJ, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <i class="fa fa-search">
+                                <input type="submit" value="Consultar" class="btn btn-default" />
+                            </i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>*@
+    }
+

@@ -23,10 +23,16 @@ namespace PrefeituraConecta.MVC.UI.Models
         [Display(Name = "Tipo da Declaração")]
         public string TipoDeclaracao { get; set; }
 
-        [Display(Name = "Período Apuração (de:)")]
+        [Display(Name = "Regime")]
+        public string Regime { get; set; }
+
+        [Display(Name = "Período Apuração (De)")]
         public DateTime PeriodoApuracaoDe { get; set; }
 
-        [Display(Name = "Período Apuração (ate:)")]
+        [Display(Name = "Período Apuração (Ate)")]
         public DateTime PeriodoApuracaoAte { get; set; }
+
+        [Display(Name = "CNPJ")]
+        public int CNPJ { get; set; }
     }
 }
