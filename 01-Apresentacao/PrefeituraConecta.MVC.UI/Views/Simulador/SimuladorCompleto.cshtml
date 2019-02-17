@@ -1,0 +1,39 @@
+﻿@model PrefeituraConecta.MVC.UI.Models.SimuladorCompletoModel
+
+@{
+    ViewBag.Title = "SimuladorCompleto";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Content/AdminTLE.css" rel="stylesheet" />
+
+<div class="content-wrapper" style="min-height: 459px;"><section data-v-3032f287="" class="content"><div data-v-3032f287="" class="row"><div data-v-3032f287="" class="col-md-12"><div data-v-3032f287="" class="box box-solid"><div data-v-3032f287="" class="box-header with-border"><h3 data-v-3032f287="" class="box-title"><b data-v-3032f287="">Simulador Completo</b></h3></div> <div data-v-3032f287="" class="box-body"><form data-v-3032f287="" method="POST" style="width: 100%;"><div data-v-3032f287="" class="row"><div data-v-3032f287="" class="col-sm-12"><div data-v-3032f287="" class="form-group"><label data-v-3032f287="" for="anexo">Quantos anexos/tipo de tributação sua empresa está submetida?</label> <div data-v-3032f287="" dir="auto" class="dropdown v-select single searchable" name="anexo"><div class="dropdown-toggle clearfix"> <input type="search" autocomplete="false" aria-label="Search for option" class="form-control" style="width: 100%;"> <button type="button" title="Clear selection" class="clear" style="display: none;"><span aria-hidden="true">×</span></button> <i role="presentation" class="open-indicator"></i> <div class="spinner" style="display: none;">Loading...</div></div> <!----></div></div></div></div> <div data-v-3032f287="" class="row"><div data-v-3032f287="" class="col-sm-6"><div data-v-3032f287="" class="form-group"><label data-v-3032f287="" for="rbt12">RBT 12</label> <i data-v-3032f287="" title="Receita bruta acumulada nos doze meses anteriores ao período de apuração (Mercado Interno), utilizada para todos os cálculos." class="fa fa-info-circle" style="color: orange;"></i> <input data-v-3032f287="" name="rbt12" type="text" class="form-control" aria-required="false" aria-invalid="false"> <span data-v-3032f287="" class="help-block" style="display: none;"></span></div></div> <div data-v-3032f287="" class="col-sm-6"><div data-v-3032f287="" class="form-group"><label data-v-3032f287="" for="mes">Receita Bruta Auferida no Mês</label> <i data-v-3032f287="" title="Receita Bruta Auferida no Mês, pode ser editada individualmente para cada cálculo." class="fa fa-info-circle" style="color: orange;"></i> <input data-v-3032f287="" name="mes" type="text" class="form-control" aria-required="false" aria-invalid="false"> <span data-v-3032f287="" class="help-block" style="display: none;"></span></div></div></div>  <div data-v-3032f287="" class="box-footer text-right"><a data-v-3032f287="" href="/" class="btn btn-default router-link-active">Voltar</a></div></form></div></div></div></div></section></div>
+
+@*<h2>SimuladorCompleto</h2>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <h4>SimuladorCompletoModel</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.Anexo, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Anexo, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Anexo, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Create" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+    }
+
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>*@

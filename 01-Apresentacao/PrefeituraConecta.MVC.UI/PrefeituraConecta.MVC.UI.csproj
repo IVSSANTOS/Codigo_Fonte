@@ -48,6 +48,8 @@
     <Reference Include="AutoMapper, Version=8.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
       <HintPath>..\..\packages\AutoMapper.8.0.0\lib\net461\AutoMapper.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Analytics.Interfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=9f877b68b06e0b5e, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Analytics.Types, Version=1.0.0.0, Culture=neutral, PublicKeyToken=9f877b68b06e0b5e, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Owin, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Microsoft.Owin.4.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
@@ -179,6 +181,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PainelController.cs" />
     <Compile Include="Controllers\PerfilController.cs" />
+    <Compile Include="Controllers\SimuladorController.cs" />
     <Compile Include="Filters\AutorizacaoTipo.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -186,6 +189,8 @@
     <Compile Include="Models\FiltroNFSModel.cs" />
     <Compile Include="Models\FiltroSimplesNacionalModel.cs" />
     <Compile Include="Models\Graficos\OptanteSimplesNacional_e_MEI_Model.cs" />
+    <Compile Include="Models\SimuladorCompletoModel.cs" />
+    <Compile Include="Models\SimuladorSimplesModel.cs" />
     <Compile Include="Models\TipoUsuario.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Models\VALOR_APURADO_EMPRESAS_MODEL.cs" />
@@ -220,6 +225,7 @@
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\Chart\exporting.js" />
     <Content Include="Scripts\Chart\highcharts.js" />
+    <Content Include="Scripts\Filtro.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
@@ -257,9 +263,12 @@
     <Content Include="Views\Empresas\Index.cshtml" />
     <Content Include="Views\Filtros\FiltroSimplesNacional.cshtml" />
     <Content Include="Views\Filtros\FiltroNFS.cshtml" />
+    <Content Include="Views\Simulador\SimuladorSimples.cshtml" />
+    <Content Include="Views\Simulador\SimuladorCompleto.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\SimplesSimulador\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
