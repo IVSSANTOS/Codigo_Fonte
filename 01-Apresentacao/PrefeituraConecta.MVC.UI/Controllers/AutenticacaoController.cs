@@ -125,7 +125,6 @@ namespace PrefeituraConecta.MVC.UI.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-        [HttpPost]
         public ActionResult Voltar()
         {
             return RedirectToAction("Index", "Home");
