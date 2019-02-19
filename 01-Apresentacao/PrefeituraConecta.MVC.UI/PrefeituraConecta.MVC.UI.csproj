@@ -306,6 +306,9 @@
     <Content Include="Views\Empresas\IncidenciaICMS.cshtml" />
     <Content Include="Views\Empresas\IncidenciaISSQN.cshtml" />
     <Content Include="Views\Empresas\IncidenciaICMS_e_ISSQN.cshtml" />
+    <Content Include="Views\Transmitidas\IncidenciaICMS.cshtml" />
+    <Content Include="Views\Transmitidas\IncidenciaICMS_e_ISSQN.cshtml" />
+    <Content Include="Views\Transmitidas\IncidenciaISSQN.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
