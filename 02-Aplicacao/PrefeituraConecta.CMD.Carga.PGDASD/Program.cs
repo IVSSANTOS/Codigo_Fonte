@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Configuration;
 
 namespace PrefeituraConecta.CMD.Carga.PGDASD
 {
@@ -12,9 +13,9 @@ namespace PrefeituraConecta.CMD.Carga.PGDASD
     {
         static void Main(string[] args)
         {
-            var arquivos = Directory.GetFiles(@"C:\Users\souza\source\repos\Prefeitura_Conecta\Prefeitura_Conecta\Arquivos\ParaCarga");
-            var ArquivosParaCarregar = @"C:\Users\souza\source\repos\Prefeitura_Conecta\Prefeitura_Conecta\Arquivos\ParaCarga";
-            var ArquivosCarregados = @"C:\Users\souza\source\repos\Prefeitura_Conecta\Prefeitura_Conecta\Arquivos\CargaOK";
+            var arquivos = Directory.GetFiles(ConfigurationManager.AppSettings["DiretorioArquivos"].ToString());
+            var ArquivosParaCarregar = ConfigurationManager.AppSettings["ArquivosParaCarregar"].ToString();
+            var ArquivosCarregados = ConfigurationManager.AppSettings["ArquivosCarregados"].ToString();
 
             SimplesNacionalBS simplesNacionalBS = new SimplesNacionalBS();
 
