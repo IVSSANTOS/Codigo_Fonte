@@ -1,0 +1,49 @@
+﻿@model IEnumerable<PrefeituraConecta.MVC.UI.Models.Declaracoes.DECLARACOES_INCIDENCIA_ISSQN_ICMS_MODEL>
+
+@{
+    ViewBag.Title = "Servico(Exterior) - Incidência em ICMS e ISSQN";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    WebGrid objWebGrid = new WebGrid(Model, rowsPerPage: 10, canPage: true);//allowing rowsperpage,paging allow or not
+}
+
+<br />
+<br />
+<br />
+
+<div class="container">
+
+    <h3>Servico(Exterior) - Incidência em ICMS e ISSQN</h3>
+    <br />
+
+
+    @objWebGrid.GetHtml(
+
+    tableStyle: "table table-striped table-bordered table-sm",
+    headerStyle:"Grid-Header",
+    alternatingRowStyle:"Grid-alt",
+    selectedRowStyle:"Grid-selected",
+    rowStyle: "Grid-rowstyle",
+    footerStyle: "Grid-Footer",
+    mode: WebGridPagerModes.All,
+    columns:
+    objWebGrid.Columns
+    (
+       objWebGrid.Column(columnName: "CNPJMATRIZ", header: "CNPJ (Matriz)"),
+       objWebGrid.Column(columnName: "NOME", header: "Razão Social"),
+       objWebGrid.Column(columnName: "RPA", header: "Receita Total"),
+       objWebGrid.Column(columnName: "VALOR_APURADO_DE_ISS", header: "Inc. de ISSQN"),
+       objWebGrid.Column(columnName: "VALOR_APURADO_DE_ICMS", header: "Inc. de ICMS")
+       )
+    )
+</div>
+
+<div class="row">
+    <a href="@Url.Action("Index", "Declaracoes")" class="elements">
+        <div class="form-group">
+            <div class="col-xs-offset-2 col-md-10">
+
+                <input type="button" value="Voltar" class="btn btn-default" />
+            </div>
+        </div>
+    </a>
+</div>

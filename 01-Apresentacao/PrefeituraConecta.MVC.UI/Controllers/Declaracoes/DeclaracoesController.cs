@@ -1,46 +1,34 @@
-﻿using AutoMapper;
-using PrefeituraConecta.API.Negocio;
-using PrefeituraConecta.MVC.UI.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace PrefeituraConecta.MVC.UI.Controllers
+namespace PrefeituraConecta.MVC.UI.Controllers.Declaracoes
 {
-
-
-    public class EmpresasController : Controller
+    [Authorize]
+    public class DeclaracoesController : Controller
     {
-        private VALOR_APURADO_EMPRESAS_BS bs = new VALOR_APURADO_EMPRESAS_BS();
-
-        // GET: Empresas
-
-        [Authorize]
+        // GET: Declaracoes
+        
         public ActionResult Index()
         {
-
-            var source = bs.ObterLista();
-
-            var lista = Mapper.Map<List<VALOR_APURADO_EMPRESAS_MODEL>>(source);
-
-            return View(lista);
+            return View(); 
         }
 
-        // GET: Empresas/Details/5
+        // GET: Declaracoes/Details/5
         public ActionResult Details(int id)
         {
             return View();
         }
 
-        // GET: Empresas/Create
+        // GET: Declaracoes/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Empresas/Create
+        // POST: Declaracoes/Create
         [HttpPost]
         public ActionResult Create(FormCollection collection)
         {
@@ -56,13 +44,13 @@ namespace PrefeituraConecta.MVC.UI.Controllers
             }
         }
 
-        // GET: Empresas/Edit/5
+        // GET: Declaracoes/Edit/5
         public ActionResult Edit(int id)
         {
             return View();
         }
 
-        // POST: Empresas/Edit/5
+        // POST: Declaracoes/Edit/5
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
         {
@@ -78,13 +66,13 @@ namespace PrefeituraConecta.MVC.UI.Controllers
             }
         }
 
-        // GET: Empresas/Delete/5
+        // GET: Declaracoes/Delete/5
         public ActionResult Delete(int id)
         {
             return View();
         }
 
-        // POST: Empresas/Delete/5
+        // POST: Declaracoes/Delete/5
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {

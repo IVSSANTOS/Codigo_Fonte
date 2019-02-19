@@ -1,17 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
-using System.ComponentModel.DataAnnotations;
 
-namespace PrefeituraConecta.MVC.UI.Models
+namespace PrefeituraConecta.MVC.UI.Models.Declaracoes
 {
-    public class VALOR_APURADO_EMPRESAS_MODEL
+    public class DECLARACOES_INCIDENCIA_ISSQN_ICMS_MODEL
     {
-        [Display()]
         public int ID_CONTRIBUINTE { get; set; }
 
-        [Display(Name ="CNPJ (Matriz)")]
+        [Display(Name = "CNPJ (Matriz)")]
         public long CNPJMATRIZ { get; set; }
 
         [Display(Name = "Razão Social")]

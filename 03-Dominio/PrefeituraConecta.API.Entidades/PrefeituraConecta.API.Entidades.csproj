@@ -91,6 +91,9 @@
     <Compile Include="Arquivos\PGDASD\REG_99999_ENCERRAMENTO_BLOCO.cs" />
     <Compile Include="Arquivos\PGDASD\REG_AAAAA_ARQUIVO_DIGITAL.cs" />
     <Compile Include="Arquivos\PGDASD\REG_ZZZZZ_ENCERRAMENTO_ARQUIVO_DIGITAL.cs" />
+    <Compile Include="DECLARACOES_TRANSM_INCIDENCIA_ICMS.cs" />
+    <Compile Include="DECLARACOES_TRANSM_INCIDENCIA_ISSQN.cs" />
+    <Compile Include="DECLARACOES_TRANSM_INCIDENCIA_ISSQN_ICMS.cs" />
     <Compile Include="Graficos\OptanteSimplesNacional_e_MEI.cs" />
     <Compile Include="Prefeitura.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

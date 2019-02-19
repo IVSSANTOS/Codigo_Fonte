@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using PrefeituraConecta.MVC.UI.Models;
+using PrefeituraConecta.MVC.UI.Models.Declaracoes;
 using PrefeituraConecta.MVC.UI.Models.Graficos;
 using System;
 using System.Collections.Generic;
@@ -22,6 +23,11 @@ namespace PrefeituraConecta.MVC.UI.AutoMapper
 
         protected void Configuration()
         {
+            this.CreateMap<PrefeituraConecta.API.Entidades.DECLARACOES_TRANSM_INCIDENCIA_ISSQN_ICMS,DECLARACOES_INCIDENCIA_ISSQN_ICMS_MODEL > ();
+            this.CreateMap<PrefeituraConecta.API.Entidades.DECLARACOES_TRANSM_INCIDENCIA_ICMS,DECLARACOES_INCIDENCIA_ICMS_MODEL>();
+            this.CreateMap<PrefeituraConecta.API.Entidades.DECLARACOES_TRANSM_INCIDENCIA_ISSQN,DECLARACOES_INCIDENCIA_ISSQN_MODEL>();
+
+
             CreateMap<PrefeituraConecta.API.Entidades.Usuario, Usuario>();
             CreateMap<PrefeituraConecta.API.Entidades.Graficos.OptanteSimplesNacional_e_MEI, OptanteSimplesNacional_e_MEI_Model>();
         }
