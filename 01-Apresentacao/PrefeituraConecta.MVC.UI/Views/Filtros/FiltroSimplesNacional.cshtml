@@ -7,60 +7,73 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<link href="~/Content/AdminTLE.css" rel="stylesheet" />
+<head>
+    <script type="text/javascript">
+        function CarregarTipo(t1) {
+            var t1 = document.getElementById(t1);
 
-<div class="content-wrapper" style="min-height: 419px;">
-    <section class="content">
-        <div class="row">
-            <div class="col-md-12">
-                <div data-v-42bb7d1d="" class="modal-mask" style="display: none;"><div data-v-42bb7d1d="" class="modal-container"><div data-v-42bb7d1d="" class="modal-header"><h3 data-v-42bb7d1d="">Salvar Consulta</h3></div> <div data-v-42bb7d1d="" class="modal-body"><div data-v-42bb7d1d="" class="row"><div data-v-42bb7d1d="" class="col-md-12"><label data-v-42bb7d1d="">Nome da Consulta</label> <input data-v-42bb7d1d="" type="text" class="form-control"></div></div></div> <div data-v-42bb7d1d="" class="modal-footer"><div data-v-42bb7d1d="" class="text-right" style="float: right;"><button data-v-42bb7d1d="" class="btn btn-default"><i data-v-42bb7d1d="" class="fa fa-close"></i> Fechar</button> <button data-v-42bb7d1d="" class="btn btn-default"><i data-v-42bb7d1d="" class="fa fa-save"></i> Salvar e Consultar</button></div></div></div></div> <div><!----> <!----></div> <div class="nav-tabs-custom">
-                    <ul class="nav nav-tabs"><li class="active"><a href="#tab_1" data-toggle="tab"><i class="fa fa-filter"></i> Filtros</a></li> <li><a href="#tab_2" data-toggle="tab"><i class="fa fa-search"></i> Resultado da Consulta</a></li> <li><a href="#tab_3" data-toggle="tab"><i class="fa fa-save"></i> Consultas Salvas</a></li></ul> <div class="tab-content">
-                        <div id="tab_1" class="tab-pane active"><div class="row"><div class="col-md-3 form-group"><label>Consulta</label> <select id="filtro_tipo" name="tipo" class="form-control pull-right" onselect="Filtro_Tipo()"><option value="PADRÃO">Incidência de ISSQN e ICMS</option> <option value="ISSQN">Incidência de ISSQN</option> <option value="ICMS">Incidência de ICMS</option></select></div> <div class="col-md-3 form-group"><label>Consolidado por</label> <select id="filtro_consolidada" name="tipo" class="form-control pull-right"><option value="matriz">Matriz</option> <option value="cnpj">CNPJ</option> <option value="declaracao">Declaração</option></select></div> <div class="col-md-3"><label>Tipo de Empresa</label> <select name="tipo" class="form-control pull-right"><option value="">--Todas--</option> <option value="estabelecida">Estabelecidas</option> <option value="nao_estabelecida">Não Estabelecidas</option></select></div> <div class="col-md-3"><label>Tipo da Declaração</label> <select name="tipo" class="form-control pull-right"><option value="ultima">Última (Apuração/Retificação)</option> <option value="primeira">Primeira (Apuração/Original)</option> <option value="">--Todas--</option></select></div></div> <div class="row form-group"><div class="col-md-3"><label>Regime</label> <select name="tipo" class="form-control pull-right"><option value="">--Todos--</option> <option value="0">Competência</option> <option value="1">Caixa</option></select></div> <div class="col-md-3"><label>P. de Apuração (De)</label> <input placeholder="Ex. 01/2018" type="text" class="form-control"></div> <div class="col-md-3"><label>P. de Apuração (Até)</label> <input placeholder="Ex. 12/2018" type="text" class="form-control"></div> <div class="col-md-3"><label>CNPJ</label> <input placeholder="Somente números" name="filtro_cnpj" type="text" class="form-control"></div></div> <div class="row form-group"><div class="col-md-4"><label>Situação Especial</label> <div style="height: 241px; background-color: rgb(248, 248, 248); padding: 10px;"><input type="checkbox"> Não Informado<br> <input type="checkbox"> Imunidade<br> <input type="checkbox"> Exigibilidade suspensa<br> <input type="checkbox"> Lançamento de Ofício<br> <div id="teste"><input type="checkbox"> Isenção<br> <input type="checkbox"> Redução<br> <input type="checkbox"> Retenção tributária<br></div> <!----> <br></div></div> <div class="col-md-4"><label>Com valor maior que zero na(s) coluna(s)</label> <div style="height: 241px; overflow: auto; background-color: rgb(248, 248, 248); padding: 10px;"><input type="checkbox"> Receita Total<br> <!----> <div><input type="checkbox"> S. Retenção <br> <input type="checkbox"> C. Retenção <br> <input type="checkbox"> Outros M. <br> <input type="checkbox"> Contabilidade <br> <input type="checkbox"> Locação <br> <input type="checkbox"> Exterior <br></div> <!----> <input type="checkbox"> Apenas as zeradas<br></div></div> <div class="col-md-4"><label>Mostrar as colunas: </label> <div style="height: 241px; overflow: auto; background-color: rgb(248, 248, 248); padding: 10px;"><input type="checkbox"> CNPJ <br> <input type="checkbox"> Razão Social <br> <!----> <input type="checkbox"> Receita Total <br> <!----> <div><input type="checkbox"> S. Retenção <br> <input type="checkbox"> C. Retenção <br> <input type="checkbox"> Outros M. <br> <input type="checkbox"> Contabilidade <br> <input type="checkbox"> Locação <br> <input type="checkbox"> Exterior <br></div> <!----></div></div></div> <div class="row"><div class="col-md-12" style="text-align: right;"><a href="javascript:void(0)" class="btn btn-default"><i class="fa fa-save"></i> Salvar e Consultar</a> <a href="javascript:void(0)" class="btn btn-default"><i class="fa fa-search"></i> Consultar</a></div></div></div> <div id="tab_2" class="tab-pane">
-                            <div class="box box-default">
-                                <div class="box-header with-border"><h3 class="box-title" style="font-size: 14px;">Parâmetros Utilizados</h3> <div class="box-tools pull-right"><button type="button" data-widget="collapse" class="btn btn-box-tool"><i class="fa fa-minus"></i></button> <button type="button" data-widget="remove" class="btn btn-box-tool"><i class="fa fa-times"></i></button></div></div> <div class="box-body">
-                                    <div class="row" style="font-size: 12px; margin-bottom: 20px;"><div class="col-sm-8"><div style="text-align: right;"><strong>PREFEITURA MUNICIPAL DE FRANCO DA ROCHA</strong></div></div> <div class="col-sm-4"><div style="text-align: right;"><span>02/17/2019 18:31</span></div></div></div> <div class="row" style="font-size: 12px;">
-                                        <div class="col-sm-3">
-                                            <strong>Consulta: </strong> ISSQN
-                                        </div> <div class="col-sm-3">
-                                            <strong>Consolidada por: </strong> MATRIZ
-                                        </div> <div class="col-sm-3">
-                                            <strong>Tipo de Empresa: </strong> ESTABELECIDAS
-                                        </div> <div class="col-sm-3">
-                                            <strong>Tipo de Declaração: </strong> Última
-                                        </div>
-                                    </div> <div class="row" style="font-size: 12px; margin-top: 10px;">
-                                        <div class="col-sm-4">
-                                            <strong>Regime: </strong> COMPETÊNCIA
-                                        </div> <div class="col-sm-4">
-                                            <strong>Período </strong> NÃO INFORMADO
-                                        </div> <div class="col-sm-4">
-                                            <strong>Cnpj: </strong> NÃO INFORMADO
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> <div class="row">
-                                <div class="col-sm-12">
-                                    <!----> <!----> <!----> <!----> <div data-v-18919532="">
-                                        <div data-v-18919532="" class="row" style="margin-top: 15px; font-size: 12px;">
-                                            <!----> <div data-v-18919532="" class="col-sm-12 table-responsive">
-                                                <table data-v-18919532="" role="grid" class="table table-bordered table-striped"><thead data-v-18919532=""><tr data-v-18919532="" role="row"><th data-v-18919532="" style="width: 11%;">CNPJ <a data-v-18919532="" href="javascript:void(0)" style="float: right;"><i data-v-18919532="" class="fa fa-sort-amount-asc"></i></a></th> <th data-v-18919532="" style="width: 18%;">Razão Social <a data-v-18919532="" href="javascript:void(0)" style="float: right;"><i data-v-18919532="" class="fa fa-sort-amount-asc"></i></a></th> <th data-v-18919532="" style="width: 10%;">Receita Total <a data-v-18919532="" href="javascript:void(0)" style="float: right;"><i data-v-18919532="" class="fa fa-sort-amount-asc"></i></a></th> <th data-v-18919532="" style="width: 10%;">S. Retenção <a data-v-18919532="" href="javascript:void(0)" style="float: right;"><i data-v-18919532="" class="fa fa-sort-amount-asc"></i></a></th> <th data-v-18919532="" style="width: 10%;">C. Retenção <a data-v-18919532="" href="javascript:void(0)" style="float: right;"><i data-v-18919532="" class="fa fa-sort-amount-asc"></i></a></th> <th data-v-18919532="" style="width: 10%;">Outros M. <a data-v-18919532="" href="javascript:void(0)" style="float: right;"><i data-v-18919532="" class="fa fa-sort-amount-asc"></i></a></th> <th data-v-18919532="" style="width: 10%;">Contabilidade <a data-v-18919532="" href="javascript:void(0)" style="float: right;"><i data-v-18919532="" class="fa fa-sort-amount-asc"></i></a></th> <th data-v-18919532="" style="width: 10%;">Locação <a data-v-18919532="" href="javascript:void(0)" style="float: right;"><i data-v-18919532="" class="fa fa-sort-amount-asc"></i></a></th> <th data-v-18919532="" style="width: 10%;">Exterior <a data-v-18919532="" href="javascript:void(0)" style="float: right;"><i data-v-18919532="" class="fa fa-sort-amount-asc"></i></a></th></tr></thead> <tbody data-v-18919532=""> <tr data-v-18919532="" style="font-weight: bold;"><td data-v-18919532="" colspan="2" style="text-align: right;">TOTAL GERAL</td> <td data-v-18919532="">R$ 0,00</td> <td data-v-18919532="">R$ 0,00</td> <td data-v-18919532="">R$ 0,00</td> <td data-v-18919532="">R$ 0,00</td> <td data-v-18919532="">R$ 0,00</td> <td data-v-18919532="">R$ 0,00</td> <td data-v-18919532="">R$ 0,00</td></tr></tbody></table> <div data-v-18919532="" class="row">
-                                                    <div data-v-18919532="" class="col-sm-5">
-                                                        Mostrando  até  de  registros encontrados.
-                                                    </div> <div data-v-18919532="" class="col-sm-7" style="text-align: right;"><!----></div>
-                                                </div>
+            if (t1.value == "PADRÃO") {
+
+            }
+        }
+    </script>
+</head>
+
+<link href="~/Content/AdminTLE.css" rel="stylesheet" />
+<body>
+    <div class="content-wrapper" style="min-height: 419px;">
+        <section class="content">
+            <div class="row">
+                <div class="col-md-12">
+                    <div data-v-42bb7d1d="" class="modal-mask" style="display: none;"><div data-v-42bb7d1d="" class="modal-container"><div data-v-42bb7d1d="" class="modal-header"><h3 data-v-42bb7d1d="">Salvar Consulta</h3></div> <div data-v-42bb7d1d="" class="modal-body"><div data-v-42bb7d1d="" class="row"><div data-v-42bb7d1d="" class="col-md-12"><label data-v-42bb7d1d="">Nome da Consulta</label> <input data-v-42bb7d1d="" type="text" class="form-control"></div></div></div> <div data-v-42bb7d1d="" class="modal-footer"><div data-v-42bb7d1d="" class="text-right" style="float: right;"><button data-v-42bb7d1d="" class="btn btn-default"><i data-v-42bb7d1d="" class="fa fa-close"></i> Fechar</button> <button data-v-42bb7d1d="" class="btn btn-default"><i data-v-42bb7d1d="" class="fa fa-save"></i> Salvar e Consultar</button></div></div></div></div> <div><!----> <!----></div> <div class="nav-tabs-custom">
+                        <ul class="nav nav-tabs"><li class="active"><a href="#tab_1" data-toggle="tab"><i class="fa fa-filter"></i> Filtros</a></li> <li><a href="#tab_2" data-toggle="tab"><i class="fa fa-search"></i> Resultado da Consulta</a></li> <li><a href="#tab_3" data-toggle="tab"><i class="fa fa-save"></i> Consultas Salvas</a></li></ul> <div class="tab-content">
+                            <div id="tab_1" class="tab-pane active"><div class="row"><div class="col-md-3 form-group"><label>Consulta</label> <select id="filtro_tipo" name="filtro_tipo" onchange="CarregarTipo ('filtro_tipo')" class="form-control pull-right"><option value="PADRÃO">Incidência de ISSQN e ICMS</option> <option value="ISSQN">Incidência de ISSQN</option> <option value="ICMS">Incidência de ICMS</option></select></div> <div class="col-md-3 form-group"><label>Consolidado por</label> <select id="filtro_consolidada" name="tipo" class="form-control pull-right"><option value="matriz">Matriz</option> <option value="cnpj">CNPJ</option> <option value="declaracao">Declaração</option></select></div> <div class="col-md-3"><label>Tipo de Empresa</label> <select name="tipo" class="form-control pull-right"><option value="">--Todas--</option> <option value="estabelecida">Estabelecidas</option> <option value="nao_estabelecida">Não Estabelecidas</option></select></div> <div class="col-md-3"><label>Tipo da Declaração</label> <select name="tipo" class="form-control pull-right"><option value="ultima">Última (Apuração/Retificação)</option> <option value="primeira">Primeira (Apuração/Original)</option> <option value="">--Todas--</option></select></div></div> <div class="row form-group"><div class="col-md-3"><label>Regime</label> <select name="tipo" class="form-control pull-right"><option value="">--Todos--</option> <option value="0">Competência</option> <option value="1">Caixa</option></select></div> <div class="col-md-3"><label>P. de Apuração (De)</label> <input placeholder="Ex. 01/2018" type="text" class="form-control"></div> <div class="col-md-3"><label>P. de Apuração (Até)</label> <input placeholder="Ex. 12/2018" type="text" class="form-control"></div> <div class="col-md-3"><label>CNPJ</label> <input placeholder="Somente números" name="filtro_cnpj" type="text" class="form-control"></div></div> <div class="row form-group"><div class="col-md-4"><label>Situação Especial</label> <div style="height: 241px; background-color: rgb(248, 248, 248); padding: 10px;"><input type="checkbox"> Não Informado<br> <input type="checkbox"> Imunidade<br> <input type="checkbox"> Exigibilidade suspensa<br> <input type="checkbox"> Lançamento de Ofício<br> <div id="teste"><input type="checkbox"> Isenção<br> <input type="checkbox"> Redução<br> <input type="checkbox"> Retenção tributária<br></div> <!----> <br></div></div> <div class="col-md-4"><label>Com valor maior que zero na(s) coluna(s)</label> <div style="height: 241px; overflow: auto; background-color: rgb(248, 248, 248); padding: 10px;"><input type="checkbox"> Receita Total<br> <!----> <div><input type="checkbox"> S. Retenção <br> <input type="checkbox"> C. Retenção <br> <input type="checkbox"> Outros M. <br> <input type="checkbox"> Contabilidade <br> <input type="checkbox"> Locação <br> <input type="checkbox"> Exterior <br></div> <!----> <input type="checkbox"> Apenas as zeradas<br></div></div> <div class="col-md-4"><label>Mostrar as colunas: </label> <div style="height: 241px; overflow: auto; background-color: rgb(248, 248, 248); padding: 10px;"><input type="checkbox"> CNPJ <br> <input type="checkbox"> Razão Social <br> <!----> <input type="checkbox"> Receita Total <br> <!----> <div><input type="checkbox"> S. Retenção <br> <input type="checkbox"> C. Retenção <br> <input type="checkbox"> Outros M. <br> <input type="checkbox"> Contabilidade <br> <input type="checkbox"> Locação <br> <input type="checkbox"> Exterior <br></div> <!----></div></div></div> <div class="row"><div class="col-md-12" style="text-align: right;"><a href="javascript:void(0)" class="btn btn-default"><i class="fa fa-save"></i> Salvar e Consultar</a> <a href="javascript:void(0)" class="btn btn-default"><i class="fa fa-search"></i> Consultar</a></div></div></div> <div id="tab_2" class="tab-pane">
+                                <div class="box box-default">
+                                    <div class="box-header with-border"><h3 class="box-title" style="font-size: 14px;">Parâmetros Utilizados</h3> <div class="box-tools pull-right"><button type="button" data-widget="collapse" class="btn btn-box-tool"><i class="fa fa-minus"></i></button> <button type="button" data-widget="remove" class="btn btn-box-tool"><i class="fa fa-times"></i></button></div></div> <div class="box-body">
+                                        <div class="row" style="font-size: 12px; margin-bottom: 20px;"><div class="col-sm-8"><div style="text-align: right;"><strong>PREFEITURA MUNICIPAL DE FRANCO DA ROCHA</strong></div></div> <div class="col-sm-4"><div style="text-align: right;"><span>02/17/2019 18:31</span></div></div></div> <div class="row" style="font-size: 12px;">
+                                            <div class="col-sm-3">
+                                                <strong>Consulta: </strong> ISSQN
+                                            </div> <div class="col-sm-3">
+                                                <strong>Consolidada por: </strong> MATRIZ
+                                            </div> <div class="col-sm-3">
+                                                <strong>Tipo de Empresa: </strong> ESTABELECIDAS
+                                            </div> <div class="col-sm-3">
+                                                <strong>Tipo de Declaração: </strong> Última
+                                            </div>
+                                        </div> <div class="row" style="font-size: 12px; margin-top: 10px;">
+                                            <div class="col-sm-4">
+                                                <strong>Regime: </strong> COMPETÊNCIA
+                                            </div> <div class="col-sm-4">
+                                                <strong>Período </strong> NÃO INFORMADO
+                                            </div> <div class="col-sm-4">
+                                                <strong>Cnpj: </strong> NÃO INFORMADO
                                             </div>
                                         </div>
-                                    </div> <!----> <!----> <!----> <!---->
+                                    </div>
+                                </div> <div class="row">
+                                    <div class="col-sm-12">
+                                        <!----> <!----> <!----> <!----> <div data-v-18919532="">
+                                            <div data-v-18919532="" class="row" style="margin-top: 15px; font-size: 12px;">
+                                                <!----> <div data-v-18919532="" class="col-sm-12 table-responsive">
+                                                    <table data-v-18919532="" role="grid" class="table table-bordered table-striped"><thead data-v-18919532=""><tr data-v-18919532="" role="row"><th data-v-18919532="" style="width: 11%;">CNPJ <a data-v-18919532="" href="javascript:void(0)" style="float: right;"><i data-v-18919532="" class="fa fa-sort-amount-asc"></i></a></th> <th data-v-18919532="" style="width: 18%;">Razão Social <a data-v-18919532="" href="javascript:void(0)" style="float: right;"><i data-v-18919532="" class="fa fa-sort-amount-asc"></i></a></th> <th data-v-18919532="" style="width: 10%;">Receita Total <a data-v-18919532="" href="javascript:void(0)" style="float: right;"><i data-v-18919532="" class="fa fa-sort-amount-asc"></i></a></th> <th data-v-18919532="" style="width: 10%;">S. Retenção <a data-v-18919532="" href="javascript:void(0)" style="float: right;"><i data-v-18919532="" class="fa fa-sort-amount-asc"></i></a></th> <th data-v-18919532="" style="width: 10%;">C. Retenção <a data-v-18919532="" href="javascript:void(0)" style="float: right;"><i data-v-18919532="" class="fa fa-sort-amount-asc"></i></a></th> <th data-v-18919532="" style="width: 10%;">Outros M. <a data-v-18919532="" href="javascript:void(0)" style="float: right;"><i data-v-18919532="" class="fa fa-sort-amount-asc"></i></a></th> <th data-v-18919532="" style="width: 10%;">Contabilidade <a data-v-18919532="" href="javascript:void(0)" style="float: right;"><i data-v-18919532="" class="fa fa-sort-amount-asc"></i></a></th> <th data-v-18919532="" style="width: 10%;">Locação <a data-v-18919532="" href="javascript:void(0)" style="float: right;"><i data-v-18919532="" class="fa fa-sort-amount-asc"></i></a></th> <th data-v-18919532="" style="width: 10%;">Exterior <a data-v-18919532="" href="javascript:void(0)" style="float: right;"><i data-v-18919532="" class="fa fa-sort-amount-asc"></i></a></th></tr></thead> <tbody data-v-18919532=""> <tr data-v-18919532="" style="font-weight: bold;"><td data-v-18919532="" colspan="2" style="text-align: right;">TOTAL GERAL</td> <td data-v-18919532="">R$ 0,00</td> <td data-v-18919532="">R$ 0,00</td> <td data-v-18919532="">R$ 0,00</td> <td data-v-18919532="">R$ 0,00</td> <td data-v-18919532="">R$ 0,00</td> <td data-v-18919532="">R$ 0,00</td> <td data-v-18919532="">R$ 0,00</td></tr></tbody></table> <div data-v-18919532="" class="row">
+                                                        <div data-v-18919532="" class="col-sm-5">
+                                                            Mostrando  até  de  registros encontrados.
+                                                        </div> <div data-v-18919532="" class="col-sm-7" style="text-align: right;"><!----></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div> <!----> <!----> <!----> <!---->
+                                    </div>
                                 </div>
-                            </div>
-                        </div> <div id="tab_3" class="tab-pane">
-                            <div data-v-1bde1acc="">
-                                <div data-v-1bde1acc="" class="row" style="margin-top: 15px;">
-                                    <!----> <div data-v-1bde1acc="" class="col-sm-12 table-responsive" style="">
-                                        <table data-v-1bde1acc="" role="grid" class="table table-bordered table-striped"><thead data-v-1bde1acc=""><tr data-v-1bde1acc="" role="row"><th data-v-1bde1acc="" style="width: 10%;">ID</th> <th data-v-1bde1acc="" style="width: 75%;">Nome da Consulta</th> <th data-v-1bde1acc="" style="width: 15%;">Ações</th></tr></thead> <tbody data-v-1bde1acc=""></tbody></table> <div data-v-1bde1acc="" class="row">
-                                            <div data-v-1bde1acc="" class="col-sm-5">
-                                                Mostrando  até  de 0 registros encontrados.
-                                            </div> <div data-v-1bde1acc="" class="col-sm-7" style="text-align: right;"><!----></div>
+                            </div> <div id="tab_3" class="tab-pane">
+                                <div data-v-1bde1acc="">
+                                    <div data-v-1bde1acc="" class="row" style="margin-top: 15px;">
+                                        <!----> <div data-v-1bde1acc="" class="col-sm-12 table-responsive" style="">
+                                            <table data-v-1bde1acc="" role="grid" class="table table-bordered table-striped"><thead data-v-1bde1acc=""><tr data-v-1bde1acc="" role="row"><th data-v-1bde1acc="" style="width: 10%;">ID</th> <th data-v-1bde1acc="" style="width: 75%;">Nome da Consulta</th> <th data-v-1bde1acc="" style="width: 15%;">Ações</th></tr></thead> <tbody data-v-1bde1acc=""></tbody></table> <div data-v-1bde1acc="" class="row">
+                                                <div data-v-1bde1acc="" class="col-sm-5">
+                                                    Mostrando  até  de 0 registros encontrados.
+                                                </div> <div data-v-1bde1acc="" class="col-sm-7" style="text-align: right;"><!----></div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -69,9 +82,10 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-</div>
+        </section>
+    </div>
+</body>
+
 
 
 @*<section class="content">
