@@ -48,6 +48,8 @@
     <Reference Include="AutoMapper, Version=8.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
       <HintPath>..\..\packages\AutoMapper.8.0.0\lib\net461\AutoMapper.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Analytics.Interfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=9f877b68b06e0b5e, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Analytics.Types, Version=1.0.0.0, Culture=neutral, PublicKeyToken=9f877b68b06e0b5e, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Owin, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Microsoft.Owin.4.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
@@ -173,29 +175,22 @@
     <Compile Include="AutoMapper\ViewModelToDomainMappingProfile.cs" />
     <Compile Include="Controllers\AutenticacaoController.cs" />
     <Compile Include="Controllers\CadastroUsuariosController.cs" />
-    <Compile Include="Controllers\Declaracoes\ComercioMercadoExteriorController.cs" />
-    <Compile Include="Controllers\Declaracoes\ComercioMercadoInternoController.cs" />
-    <Compile Include="Controllers\Declaracoes\DeclaracoesController.cs" />
-    <Compile Include="Controllers\Declaracoes\ReceitaDeclaradaController.cs" />
-    <Compile Include="Controllers\Declaracoes\ServicoComRetencaoController.cs" />
-    <Compile Include="Controllers\Declaracoes\ServicoContabilidadeController.cs" />
-    <Compile Include="Controllers\Declaracoes\ServicoExteriorController.cs" />
-    <Compile Include="Controllers\Declaracoes\ServicoLocacaoController.cs" />
-    <Compile Include="Controllers\Declaracoes\ServicoOutrosMunicipiosController.cs" />
-    <Compile Include="Controllers\Declaracoes\ServicoSemRetencaoController.cs" />
-    <Compile Include="Controllers\Declaracoes\TransmitidasController.cs" />
-    <Compile Include="Controllers\Declaracoes\EmpresasController.cs" />
+    <Compile Include="Controllers\DeclaracoesController.cs" />
+    <Compile Include="Controllers\EmpresasController.cs" />
+    <Compile Include="Controllers\FiltrosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PainelController.cs" />
     <Compile Include="Controllers\PerfilController.cs" />
-    <Compile Include="Models\Declaracoes\DECLARACOES_INCIDENCIA_ISSQN_MODEL.cs" />
+    <Compile Include="Controllers\SimuladorController.cs" />
     <Compile Include="Filters\AutorizacaoTipo.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Declaracoes\DECLARACOES_INCIDENCIA_ICMS_MODEL.cs" />
-    <Compile Include="Models\Declaracoes\DECLARACOES_INCIDENCIA_ISSQN_ICMS_MODEL.cs" />
+    <Compile Include="Models\FiltroNFSModel.cs" />
+    <Compile Include="Models\FiltroSimplesNacionalModel.cs" />
     <Compile Include="Models\Graficos\OptanteSimplesNacional_e_MEI_Model.cs" />
+    <Compile Include="Models\SimuladorCompletoModel.cs" />
+    <Compile Include="Models\SimuladorSimplesModel.cs" />
     <Compile Include="Models\TipoUsuario.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -213,6 +208,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\estilo.css" />
+    <Content Include="Content\estilo_home.css" />
     <Content Include="Content\icon.css" />
     <Content Include="Content\Sky.css" />
     <Content Include="favicon.ico" />
@@ -228,6 +224,7 @@
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\Chart\exporting.js" />
     <Content Include="Scripts\Chart\highcharts.js" />
+    <Content Include="Scripts\Filtro.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
@@ -262,42 +259,15 @@
     <Content Include="Views\Perfil\AlterarSenha.cshtml" />
     <Content Include="Views\Declaracoes\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutPadrao.cshtml" />
-    <Content Include="Views\Transmitidas\IncidenciaICMS.cshtml" />
-    <Content Include="Views\Transmitidas\IncidenciaISSQN.cshtml" />
-    <Content Include="Views\Transmitidas\IncidenciaICMS_e_ISSQN.cshtml" />
-    <Content Include="Views\ReceitaDeclarada\IncidenciaICMS.cshtml" />
-    <Content Include="Views\ReceitaDeclarada\IncidenciaISSQN.cshtml" />
-    <Content Include="Views\ReceitaDeclarada\IncidenciaICMS_e_ISSQN.cshtml" />
-    <Content Include="Views\ServicoSemRetencao\IncidenciaICMS.cshtml" />
-    <Content Include="Views\ServicoSemRetencao\IncidenciaISSQN.cshtml" />
-    <Content Include="Views\ServicoSemRetencao\IncidenciaICMS_e_ISSQN.cshtml" />
-    <Content Include="Views\ServicoComRetencao\IncidenciaICMS.cshtml" />
-    <Content Include="Views\ServicoComRetencao\IncidenciaISSQN.cshtml" />
-    <Content Include="Views\ServicoComRetencao\IncidenciaICMS_e_ISSQN.cshtml" />
-    <Content Include="Views\ServicoOutrosMunicipios\IncidenciaICMS.cshtml" />
-    <Content Include="Views\ServicoOutrosMunicipios\IncidenciaISSQN.cshtml" />
-    <Content Include="Views\ServicoOutrosMunicipios\IncidenciaICMS_e_ISSQN.cshtml" />
-    <Content Include="Views\ServicoLocacao\IncidenciaICMS.cshtml" />
-    <Content Include="Views\ServicoLocacao\IncidenciaISSQN.cshtml" />
-    <Content Include="Views\ServicoLocacao\IncidenciaICMS_e_ISSQN.cshtml" />
-    <Content Include="Views\ServicoContabilidade\IncidenciaICMS.cshtml" />
-    <Content Include="Views\ServicoContabilidade\IncidenciaISSQN.cshtml" />
-    <Content Include="Views\ServicoContabilidade\IncidenciaICMS_e_ISSQN.cshtml" />
-    <Content Include="Views\ServicoExterior\IncidenciaICMS.cshtml" />
-    <Content Include="Views\ServicoExterior\IncidenciaISSQN.cshtml" />
-    <Content Include="Views\ServicoExterior\IncidenciaICMS_e_ISSQN.cshtml" />
-    <Content Include="Views\ComercioMercadoInterno\IncidenciaICMS.cshtml" />
-    <Content Include="Views\ComercioMercadoInterno\IncidenciaISSQN.cshtml" />
-    <Content Include="Views\ComercioMercadoInterno\IncidenciaICMS_e_ISSQN.cshtml" />
-    <Content Include="Views\ComercioMercadoExterior\IncidenciaICMS.cshtml" />
-    <Content Include="Views\ComercioMercadoExterior\IncidenciaISSQN.cshtml" />
-    <Content Include="Views\ComercioMercadoExterior\IncidenciaICMS_e_ISSQN.cshtml" />
-    <Content Include="Views\Empresas\IncidenciaICMS.cshtml" />
-    <Content Include="Views\Empresas\IncidenciaISSQN.cshtml" />
-    <Content Include="Views\Empresas\IncidenciaICMS_e_ISSQN.cshtml" />
+    <Content Include="Views\Empresas\Index.cshtml" />
+    <Content Include="Views\Filtros\FiltroSimplesNacional.cshtml" />
+    <Content Include="Views\Filtros\FiltroNFS.cshtml" />
+    <Content Include="Views\Simulador\SimuladorSimples.cshtml" />
+    <Content Include="Views\Simulador\SimuladorCompleto.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\SimplesSimulador\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

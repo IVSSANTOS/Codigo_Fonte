@@ -49,6 +49,8 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Analytics.Interfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=9f877b68b06e0b5e, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Analytics.Types, Version=1.0.0.0, Culture=neutral, PublicKeyToken=9f877b68b06e0b5e, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -91,12 +93,13 @@
     <Compile Include="Arquivos\PGDASD\REG_99999_ENCERRAMENTO_BLOCO.cs" />
     <Compile Include="Arquivos\PGDASD\REG_AAAAA_ARQUIVO_DIGITAL.cs" />
     <Compile Include="Arquivos\PGDASD\REG_ZZZZZ_ENCERRAMENTO_ARQUIVO_DIGITAL.cs" />
-    <Compile Include="DECLARACOES_TRANSM_INCIDENCIA_ICMS.cs" />
-    <Compile Include="DECLARACOES_TRANSM_INCIDENCIA_ISSQN.cs" />
-    <Compile Include="DECLARACOES_TRANSM_INCIDENCIA_ISSQN_ICMS.cs" />
+    <Compile Include="FiltroNFS.cs" />
+    <Compile Include="FiltroSimplesNacional.cs" />
     <Compile Include="Graficos\OptanteSimplesNacional_e_MEI.cs" />
     <Compile Include="Prefeitura.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SimuladorCompleto.cs" />
+    <Compile Include="SimuladorSimples.cs" />
     <Compile Include="Usuario.cs" />
     <Compile Include="VALOR_APURADO_EMPRESAS.cs" />
   </ItemGroup>

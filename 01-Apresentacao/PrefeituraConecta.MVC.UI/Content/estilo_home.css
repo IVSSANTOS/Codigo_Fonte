@@ -1,0 +1,23 @@
+﻿body {
+    background-image: url('../Utils/Images/Imagem2.jpg');
+    opacity: 0.9;
+    filter: alpha(opacity=90);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+ }
+
+#rodape footer{
+    padding-top: 31em;
+    padding-bottom: 0px;
+    margin: 0;
+}
+
+#rodape footer p{
+    text-align: center;
+    margin: 0
+}
+
+#rodape footer hr {
+    text-align: center;
+}

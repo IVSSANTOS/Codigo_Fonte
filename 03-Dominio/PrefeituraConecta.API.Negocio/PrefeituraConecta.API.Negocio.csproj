@@ -49,6 +49,8 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Analytics.Interfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=9f877b68b06e0b5e, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Analytics.Types, Version=1.0.0.0, Culture=neutral, PublicKeyToken=9f877b68b06e0b5e, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -59,9 +61,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FiltroNFS_BS.cs" />
+    <Compile Include="FiltroSimplesNacional_BS.cs" />
     <Compile Include="PrefeituraBS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SimplesNacionalBS.cs" />
+    <Compile Include="SimuladorCompleto_BS.cs" />
+    <Compile Include="SimuladorSimples_BS.cs" />
     <Compile Include="UsuarioBS.cs" />
     <Compile Include="VALOR_APURADO_EMPRESAS_BS.cs" />
   </ItemGroup>

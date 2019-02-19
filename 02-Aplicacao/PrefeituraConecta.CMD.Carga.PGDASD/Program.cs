@@ -12,9 +12,9 @@ namespace PrefeituraConecta.CMD.Carga.PGDASD
     {
         static void Main(string[] args)
         {
-            var arquivos = Directory.GetFiles(@"C:\Projetos\Prefeitura_Conecta\Prefeitura_Conecta\Arquivos\ParaCarga");
-            var ArquivosParaCarregar = @"C:\Projetos\Prefeitura_Conecta\Prefeitura_Conecta\Arquivos\ParaCarga";
-            var ArquivosCarregados = @"C:\Projetos\Prefeitura_Conecta\Prefeitura_Conecta\Arquivos\CargaOK";
+            var arquivos = Directory.GetFiles(@"C:\Users\souza\source\repos\Prefeitura_Conecta\Prefeitura_Conecta\Arquivos\ParaCarga");
+            var ArquivosParaCarregar = @"C:\Users\souza\source\repos\Prefeitura_Conecta\Prefeitura_Conecta\Arquivos\ParaCarga";
+            var ArquivosCarregados = @"C:\Users\souza\source\repos\Prefeitura_Conecta\Prefeitura_Conecta\Arquivos\CargaOK";
 
             SimplesNacionalBS simplesNacionalBS = new SimplesNacionalBS();
 
