@@ -10,36 +10,39 @@
 <br />
 <br />
 
-<div class="container">
+<div class="content-wrapper" style="min-height: 419px; background:white">
+    <section class="content">
+        <div class="row">
+            <h3>Comercio Mercado(Interno) - Incidência em ICMS e ISSQN</h3>
+            <br />
 
-    <h3>Comercio Mercado(Interno) - Incidência em ICMS e ISSQN</h3>
-    <br />
 
+            @objWebGrid.GetHtml(
 
-    @objWebGrid.GetHtml(
-
-    tableStyle: "table table-striped table-bordered table-sm",
-    headerStyle:"Grid-Header",
-    alternatingRowStyle:"Grid-alt",
-    selectedRowStyle:"Grid-selected",
-    rowStyle: "Grid-rowstyle",
-    footerStyle: "Grid-Footer",
-    mode: WebGridPagerModes.All,
-    columns:
-    objWebGrid.Columns
-    (
-       objWebGrid.Column(columnName: "CNPJMATRIZ", header: "CNPJ (Matriz)"),
-       objWebGrid.Column(columnName: "NOME", header: "Razão Social"),
-       objWebGrid.Column(columnName: "RPA", header: "Receita Total"),
-       objWebGrid.Column(columnName: "VALOR_APURADO_DE_ISS", header: "Inc. de ISSQN"),
-       objWebGrid.Column(columnName: "VALOR_APURADO_DE_ICMS", header: "Inc. de ICMS")
-       )
-    )
-    <div class="table">
-        <a href="@Url.Action("Index", "Declaracoes")" class="elements">
-            <div class="form-group">
-                <input type="button" value="Voltar" class="btn btn-danger" />
+            tableStyle: "table table-striped table-bordered table-sm",
+            headerStyle:"Grid-Header",
+            alternatingRowStyle:"Grid-alt",
+            selectedRowStyle:"Grid-selected",
+            rowStyle: "Grid-rowstyle",
+            footerStyle: "Grid-Footer",
+            mode: WebGridPagerModes.All,
+            columns:
+            objWebGrid.Columns
+            (
+               objWebGrid.Column(columnName: "CNPJMATRIZ", header: "CNPJ (Matriz)"),
+               objWebGrid.Column(columnName: "NOME", header: "Razão Social"),
+               objWebGrid.Column(columnName: "RPA", header: "Receita Total"),
+               objWebGrid.Column(columnName: "VALOR_APURADO_DE_ISS", header: "Inc. de ISSQN"),
+               objWebGrid.Column(columnName: "VALOR_APURADO_DE_ICMS", header: "Inc. de ICMS")
+               )
+            )
+            <div class="table">
+                <a href="@Url.Action("Index", "Declaracoes")" class="elements">
+                    <div class="form-group">
+                        <input type="button" value="Voltar" class="btn btn-danger" />
+                    </div>
+                </a>
             </div>
-        </a>
-    </div>
+        </div>
+    </section>
 </div>

@@ -4,9 +4,10 @@
     ViewBag.Title = "Login";
     Layout = "~/Views/Shared/_LayoutPadrao.cshtml";
 }
-
-<h2>Login</h2>
-
+@*<link href="~/Content/AdminTLE.css" rel="stylesheet" />*@
+<div class="text-center">
+    <h2>Login</h2>
+</div>
 @if (TempData["Mensagem"] != null)
 {
     <div class="alert alert-success">
@@ -28,6 +29,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Login, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
+
                 @Html.EditorFor(model => model.Login, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Login, "", new { @class = "text-danger" })
             </div>

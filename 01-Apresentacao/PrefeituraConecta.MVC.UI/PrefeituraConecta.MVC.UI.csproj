@@ -175,6 +175,7 @@
     <Compile Include="AutoMapper\ViewModelToDomainMappingProfile.cs" />
     <Compile Include="Controllers\AutenticacaoController.cs" />
     <Compile Include="Controllers\CadastroUsuariosController.cs" />
+    <Compile Include="Controllers\DeclaracoesController.cs" />
     <Compile Include="Controllers\Declaracoes\ComercioMercadoExteriorController.cs" />
     <Compile Include="Controllers\Declaracoes\ComercioMercadoInternoController.cs" />
     <Compile Include="Controllers\Declaracoes\DeclaracoesController.cs" />
@@ -196,6 +197,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\DeclaracoesModel.cs" />
     <Compile Include="Models\Declaracoes\DECLARACOES_INCIDENCIA_ICMS_MODEL.cs" />
     <Compile Include="Models\Declaracoes\DECLARACOES_INCIDENCIA_ISSQN_ICMS_MODEL.cs" />
     <Compile Include="Models\Declaracoes\DECLARACOES_INCIDENCIA_ISSQN_MODEL.cs" />

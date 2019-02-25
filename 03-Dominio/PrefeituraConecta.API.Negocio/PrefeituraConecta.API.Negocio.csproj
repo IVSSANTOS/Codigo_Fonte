@@ -61,6 +61,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Declaracoes_BS.cs" />
     <Compile Include="FiltroNFS_BS.cs" />
     <Compile Include="FiltroSimplesNacional_BS.cs" />
     <Compile Include="PrefeituraBS.cs" />
