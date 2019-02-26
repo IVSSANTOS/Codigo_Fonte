@@ -13,8 +13,8 @@ namespace PrefeituraConecta.API.Dados
     {
         private string connectionString = new DBConfiguration().GetconfigurationStringSQL();
 
-        public Declaracoes ObterContador()
-        {
+        public decimal ObterContadorEmpresas()
+        {            
             Declaracoes Contador = new Declaracoes();
 
             SqlConnection con = new SqlConnection(connectionString);
@@ -38,7 +38,52 @@ namespace PrefeituraConecta.API.Dados
 
                 }
 
-                return Contador;
+                return Contador.EMPRESAS;
+
+            }
+
+            catch (Exception ex)
+
+            {
+
+                throw ex;
+
+            }
+
+            finally
+
+            {
+
+                con.Close();
+
+            }
+        }
+        public decimal ObterContadorTransmitidas()
+        {
+            Declaracoes Contador = new Declaracoes();
+
+            SqlConnection con = new SqlConnection(connectionString);
+
+            try
+
+            {
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("[DBO].[SP_DECLARACOES_TRANSMITIDAS]", con);
+
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+
+                {
+
+                    Contador.TRANSMITIDAS = dr["TRANSMITIDAS"].ToString().Equals(string.Empty) ? 0 : Convert.ToInt64(dr["TRANSMITIDAS"].ToString());
+
+                }
+
+                return Contador.TRANSMITIDAS;
 
             }
 

@@ -6,9 +6,10 @@ using System.Web;
 
 namespace PrefeituraConecta.MVC.UI.Models
 {
-    public class DeclaracoesModelEmpresas
+    public class DeclaracoesModel
     {
-        [Display(Name = "Empresas")]
         public decimal EMPRESAS { get; set; }
+
+        public decimal TRANSMITIDAS { get; set; }
     }
 }

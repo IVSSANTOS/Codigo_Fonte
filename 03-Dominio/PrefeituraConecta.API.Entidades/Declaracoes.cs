@@ -9,5 +9,7 @@ namespace PrefeituraConecta.API.Entidades
     public class Declaracoes
     {
         public decimal EMPRESAS { get; set; }
+
+        public decimal TRANSMITIDAS { get; set; }
     }
 }

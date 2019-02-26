@@ -34,6 +34,7 @@ namespace PrefeituraConecta.MVC.UI.AutoMapper
             CreateMap<PrefeituraConecta.API.Entidades.FiltroNFS, FiltroNFSModel>();
             CreateMap<PrefeituraConecta.API.Entidades.SimuladorSimples, SimuladorSimplesModel>();
             CreateMap<PrefeituraConecta.API.Entidades.SimuladorCompleto, SimuladorCompletoModel>();
+            CreateMap<PrefeituraConecta.API.Entidades.Declaracoes, DeclaracoesModel>();
         }
     }
 }

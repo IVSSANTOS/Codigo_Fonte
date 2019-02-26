@@ -175,7 +175,6 @@
     <Compile Include="AutoMapper\ViewModelToDomainMappingProfile.cs" />
     <Compile Include="Controllers\AutenticacaoController.cs" />
     <Compile Include="Controllers\CadastroUsuariosController.cs" />
-    <Compile Include="Controllers\DeclaracoesController.cs" />
     <Compile Include="Controllers\Declaracoes\ComercioMercadoExteriorController.cs" />
     <Compile Include="Controllers\Declaracoes\ComercioMercadoInternoController.cs" />
     <Compile Include="Controllers\Declaracoes\DeclaracoesController.cs" />
@@ -272,7 +271,6 @@
     <Content Include="Views\Painel\Index.cshtml" />
     <Content Include="Views\Painel\Mensagens.cshtml" />
     <Content Include="Views\Perfil\AlterarSenha.cshtml" />
-    <Content Include="Views\Declaracoes\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutPadrao.cshtml" />
     <Content Include="Views\Filtros\FiltroSimplesNacional.cshtml" />
     <Content Include="Views\Filtros\FiltroNFS.cshtml" />
@@ -311,6 +309,7 @@
     <Content Include="Views\Transmitidas\IncidenciaICMS.cshtml" />
     <Content Include="Views\Transmitidas\IncidenciaICMS_e_ISSQN.cshtml" />
     <Content Include="Views\Transmitidas\IncidenciaISSQN.cshtml" />
+    <Content Include="Views\Declaracoes\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,4 +1,5 @@
-﻿
+﻿@model PrefeituraConecta.MVC.UI.Models.DeclaracoesModel
+
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -21,7 +22,7 @@
                                     <div class="small-box">
                                         <div class="inner paineis">
                                             <p>Empresas</p>
-                                            <h4>0</h4>
+                                            <h4>@Html.Raw(Model.EMPRESAS.ToString())</h4>
                                         </div>
                                         <div class="icon">
                                             <i class="fa fa-bank"></i>
@@ -34,7 +35,7 @@
                                     <div class="small-box">
                                         <div class="inner paineis">
                                             <p>Declarações Transmitidas</p>
-                                            <h4>0</h4>
+                                            <h4>@Html.Raw(Model.TRANSMITIDAS.ToString())</h4>
                                         </div>
                                         <div class="icon">
                                             <i class="ion ion-clipboard"></i>

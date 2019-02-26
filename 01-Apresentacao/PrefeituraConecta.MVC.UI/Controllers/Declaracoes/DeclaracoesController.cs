@@ -1,4 +1,7 @@
-﻿using System;
+﻿using AutoMapper;
+using PrefeituraConecta.API.Negocio;
+using PrefeituraConecta.MVC.UI.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,10 +13,23 @@ namespace PrefeituraConecta.MVC.UI.Controllers.Declaracoes
     public class DeclaracoesController : Controller
     {
         // GET: Declaracoes
-        
+        Declaracoes_BS ContadorEmpresas = new Declaracoes_BS();
+
         public ActionResult Index()
         {
-            return View(); 
+            try
+            {
+                var source = ContadorEmpresas.ObterContadores();
+
+                var Contador = Mapper.Map<DeclaracoesModel>(source);
+
+                return View(Contador);
+            }
+            catch
+            {
+                return View();
+            }
+           
         }
 
         // GET: Declaracoes/Details/5

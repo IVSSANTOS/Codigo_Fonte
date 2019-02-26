@@ -32,6 +32,7 @@ namespace PrefeituraConecta.MVC.UI.AutoMapper
             this.CreateMap<FiltroNFSModel, PrefeituraConecta.API.Entidades.FiltroNFS>();
             this.CreateMap<SimuladorSimplesModel, PrefeituraConecta.API.Entidades.SimuladorSimples>();
             this.CreateMap<SimuladorCompletoModel, PrefeituraConecta.API.Entidades.SimuladorCompleto>();
+            this.CreateMap<DeclaracoesModel, PrefeituraConecta.API.Entidades.Declaracoes>();
         }
     }
 }
