@@ -19,6 +19,16 @@ namespace PrefeituraConecta.API.Negocio
             {
                 obj.EMPRESAS = db.ObterContadorEmpresas();
                 obj.TRANSMITIDAS = db.ObterContadorTransmitidas();
+                obj.RECEITAS_DECLARADAS_ISSQN = db.ObterContadorReceitasDeclaradasIssqn();
+                obj.RECEITAS_DECLARADAS_ICMS = db.ObterContadorReceitasDeclaradasIcms();
+                obj.SERVICOS_SEM_RETENCAO = db.ObterContadorServicosSemRetencao();
+                obj.SERVICOS_COM_RETENCAO = db.ObterContadorServicosComRetencao();
+                obj.SERVICOS_OUTROS_MUNICIPIOS = db.ObterContadorServicosOutrosMunicipios();
+                obj.SERVICOS_LOCACAO = db.ObterContadorServicosLocacao();
+                obj.SERVICOS_CONTABILIDADE = db.ObterContadorServicosContabilidade();
+                obj.SERVICOS_EXTERIOR = db.ObterContadorServicosExterior();
+                obj.COMERCIO_MERCADO_INTERNO = db.ObterContadorComercioMercadoInterno();
+                obj.COMERCIO_EXTERIOR = db.ObterContadorComercioExterior();
 
                 return obj;
             }

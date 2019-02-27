@@ -48,8 +48,8 @@
                                     <div class="small-box">
                                         <div class="inner paineis">
                                             <p>Receita Declarada</p>
-                                            <h4>ISSQN: R$ 0,00</h4>
-                                            <h4>ICMS: R$ 0,00</h4>
+                                            <h4>R$ @Html.Raw(Model.RECEITAS_DECLARADAS_ISSQN.ToString())</h4>
+                                            <h4>@Html.Raw(Model.RECEITAS_DECLARADAS_ICMS.ToString())</h4>
                                         </div>
                                         <div class="icon">
                                             <i class="ion ion-cash"></i>
@@ -62,7 +62,7 @@
                                     <div class="small-box">
                                         <div class="inner paineis">
                                             <p>Serviços (Sem Retenção)</p>
-                                            <h4>R$ 0,00</h4>
+                                            <h4>@Html.Raw(Model.SERVICOS_SEM_RETENCAO.ToString())</h4>
                                         </div>
                                     </div>
                                 </a>
@@ -72,7 +72,7 @@
                                     <div class="small-box">
                                         <div class="inner paineis">
                                             <p>Serviços (Com Retenção)</p>
-                                            <h4>R$ 0,00</h4>
+                                            <h4>@Html.Raw(Model.SERVICOS_COM_RETENCAO.ToString())</h4>
                                         </div>
                                     </div>
                                 </a>
@@ -82,7 +82,7 @@
                                     <div class="small-box">
                                         <div class="inner paineis">
                                             <p>Serviços (Outros Municípios)</p>
-                                            <h4>R$ 0,00</h4>
+                                            <h4>@Html.Raw(Model.SERVICOS_OUTROS_MUNICIPIOS.ToString())</h4>
                                         </div>
                                     </div>
                                 </a>
@@ -92,7 +92,7 @@
                                     <div class="small-box">
                                         <div class="inner paineis">
                                             <p>Serviços (Locação)</p>
-                                            <h4>R$ 0,00</h4>
+                                            <h4>@Html.Raw(Model.SERVICOS_LOCACAO.ToString())</h4>
                                         </div>
                                     </div>
                                 </a>
@@ -102,7 +102,7 @@
                                     <div class="small-box">
                                         <div class="inner paineis">
                                             <p>Serviços (Contabilidade)</p>
-                                            <h4>R$ 0,00</h4>
+                                            <h4>@Html.Raw(Model.SERVICOS_CONTABILIDADE.ToString())</h4>
                                         </div>
                                     </div>
                                 </a>
@@ -112,7 +112,7 @@
                                     <div class="small-box">
                                         <div class="inner paineis">
                                             <p>Serviços (Exterior)</p>
-                                            <h4>R$ 0,00</h4>
+                                            <h4>@Html.Raw(Model.SERVICOS_EXTERIOR.ToString())</h4>
                                         </div>
                                     </div>
                                 </a>
@@ -122,7 +122,7 @@
                                     <div class="small-box">
                                         <div class="inner paineis">
                                             <p>Comércio (Mercado Interno)</p>
-                                            <h4>R$ 0,00</h4>
+                                            <h4>@Html.Raw(Model.COMERCIO_MERCADO_INTERNO.ToString())</h4>
                                         </div>
                                     </div>
                                 </a>
@@ -132,7 +132,7 @@
                                     <div class="small-box">
                                         <div class="inner paineis">
                                             <p>Comércio (Exterior)</p>
-                                            <h4>R$ 0,00</h4>
+                                            <h4>@Html.Raw(Model.COMERCIO_EXTERIOR.ToString())</h4>
                                         </div>
                                     </div>
                                 </a>
