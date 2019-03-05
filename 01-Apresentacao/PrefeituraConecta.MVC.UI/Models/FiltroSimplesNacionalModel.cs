@@ -11,6 +11,11 @@ namespace PrefeituraConecta.MVC.UI.Models
 
         public int ID_CONSULTA { get; set; }
 
+        public int ID_PREFEITURA { get; set; }
+
+        public int ID_USUARIO { get; set; }
+
+
         [Display(Name = "Consulta)")]
         public string Consulta { get; set; }
 
@@ -27,10 +32,10 @@ namespace PrefeituraConecta.MVC.UI.Models
         public string Regime { get; set; }
 
         [Display(Name = "Período Apuração (De)")]
-        public DateTime PeriodoApuracaoDe { get; set; }
+        public int PeriodoApuracaoDe { get; set; }
 
         [Display(Name = "Período Apuração (Ate)")]
-        public DateTime PeriodoApuracaoAte { get; set; }
+        public int PeriodoApuracaoAte { get; set; }
 
         [Display(Name = "CNPJ")]
         public int CNPJ { get; set; }
