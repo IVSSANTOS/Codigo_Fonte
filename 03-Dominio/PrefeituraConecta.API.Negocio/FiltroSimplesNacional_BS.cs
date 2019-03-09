@@ -24,5 +24,18 @@ namespace PrefeituraConecta.API.Negocio
                 throw;
             }
         }
+
+        public FiltroSimplesNacional ObterFiltroSimplesNacional()
+        {
+            try
+            {
+                return db.ObterFiltroSimplesNacional();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
     }
 }

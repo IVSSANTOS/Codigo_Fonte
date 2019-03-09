@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using PrefeituraConecta.API.Negocio;
 using PrefeituraConecta.MVC.UI.Models.Declaracoes;
+using PrefeituraConecta.MVC.UI.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,7 @@ namespace PrefeituraConecta.MVC.UI.Controllers.Declaracoes
     public class EmpresasController : Controller
     {
         private VALOR_APURADO_EMPRESAS_BS bs = new VALOR_APURADO_EMPRESAS_BS();
+        FiltroSimplesNacional_BS filtroSimplesNacional_BS = new FiltroSimplesNacional_BS();
 
         // GET: Empresas
 
@@ -23,55 +25,25 @@ namespace PrefeituraConecta.MVC.UI.Controllers.Declaracoes
 
             // Obter o filtro da consulta
 
-            var consulta = "IncidenciaICMS_e_ISSQN";
+            var filtroSimplesNacional = filtroSimplesNacional_BS.ObterFiltroSimplesNacional();
 
-            switch (consulta)
+            if (filtroSimplesNacional.Consulta.Equals(Consulta.ICMS.Value))
             {
-                case "IncidenciaICMS":
-
-                    try
-                    {
-                        // TODO: Add insert logic here
-
-                        return RedirectToAction("IncidenciaICMS");
-                    }
-                    catch
-                    {
-                        return View();
-                    }
-
-
-                case "IncidenciaISSQN":
-
-                    try
-                    {
-                        // TODO: Add insert logic here
-
-                        return RedirectToAction("IncidenciaISSQN");
-                    }
-                    catch
-                    {
-                        return View();
-                    }
-
-                case "IncidenciaICMS_e_ISSQN":
-
-                    try
-                    {
-                        // TODO: Add insert logic here
-
-                        return RedirectToAction("IncidenciaICMS_e_ISSQN");
-                    }
-                    catch
-                    {
-                        return View();
-                    }
-
+                return RedirectToAction("IncidenciaICMS");
+            }
+            else if (filtroSimplesNacional.Consulta.Equals(Consulta.ISSQN.Value))
+            {
+                return RedirectToAction("IncidenciaISSQN");
+            }
+            else if (filtroSimplesNacional.Consulta.Equals(Consulta.PADRAO.Value))
+            {
+                return RedirectToAction("IncidenciaICMS_e_ISSQN");
+            }
+            else
+            {
+                return View();
             }
 
-
-            return View();
-     
         }
 
 

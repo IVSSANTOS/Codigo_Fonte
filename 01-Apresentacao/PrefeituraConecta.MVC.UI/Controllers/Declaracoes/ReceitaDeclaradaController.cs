@@ -1,4 +1,6 @@
-﻿using PrefeituraConecta.MVC.UI.Models.Declaracoes;
+﻿using PrefeituraConecta.API.Negocio;
+using PrefeituraConecta.MVC.UI.Models.Declaracoes;
+using PrefeituraConecta.MVC.UI.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,59 +11,31 @@ namespace PrefeituraConecta.MVC.UI.Controllers.Declaracoes
 {
     public class ReceitaDeclaradaController : Controller
     {
+        FiltroSimplesNacional_BS filtroSimplesNacional_BS = new FiltroSimplesNacional_BS();
+
         // GET: ReceitaDeclarada
         public ActionResult Index()
         {
             // Obter o filtro da consulta
 
-            var consulta = "IncidenciaICMS";
+            var filtroSimplesNacional = filtroSimplesNacional_BS.ObterFiltroSimplesNacional();
 
-            switch (consulta)
+            if (filtroSimplesNacional.Consulta.Equals(Consulta.ICMS.Value))
             {
-                case "IncidenciaICMS":
-
-                    try
-                    {
-                        // TODO: Add insert logic here
-
-                        return RedirectToAction("IncidenciaICMS");
-                    }
-                    catch
-                    {
-                        return View();
-                    }
-
-
-                case "IncidenciaISSQN":
-
-                    try
-                    {
-                        // TODO: Add insert logic here
-
-                        return RedirectToAction("IncidenciaISSQN");
-                    }
-                    catch
-                    {
-                        return View();
-                    }
-
-                case "IncidenciaICMS_e_ISSQN":
-
-                    try
-                    {
-                        // TODO: Add insert logic here
-
-                        return RedirectToAction("IncidenciaICMS_e_ISSQN");
-                    }
-                    catch
-                    {
-                        return View();
-                    }
-
+                return RedirectToAction("IncidenciaICMS");
             }
-
-
-            return View();
+            else if (filtroSimplesNacional.Consulta.Equals(Consulta.ISSQN.Value))
+            {
+                return RedirectToAction("IncidenciaISSQN");
+            }
+            else if (filtroSimplesNacional.Consulta.Equals(Consulta.PADRAO.Value))
+            {
+                return RedirectToAction("IncidenciaICMS_e_ISSQN");
+            }
+            else
+            {
+                return View();
+            }
         }
 
 
