@@ -28,6 +28,6 @@ namespace PrefeituraConecta.API.Entidades
               
         public int PeriodoApuracaoAte { get; set; }
                
-        public int CNPJ { get; set; }
+        public long CNPJ { get; set; }
     }
 }

@@ -52,9 +52,9 @@ namespace PrefeituraConecta.API.Dados
 
                     obj.PeriodoApuracaoDe = dr["PERIODO_APURACAO_DE"].ToString().Equals(string.Empty) ? 0 : Convert.ToInt32(dr["PERIODO_APURACAO_DE"].ToString());
 
-                    obj.PeriodoApuracaoDe = dr["PERIODO_APURACAO_ATE"].ToString().Equals(string.Empty) ? 0 : Convert.ToInt32(dr["PERIODO_APURACAO_ATE"].ToString());
+                    obj.PeriodoApuracaoAte = dr["PERIODO_APURACAO_ATE"].ToString().Equals(string.Empty) ? 0 : Convert.ToInt32(dr["PERIODO_APURACAO_ATE"].ToString());
                     
-                    obj.CNPJ = dr["CNPJ"].ToString().Equals(string.Empty) ? 0 : Convert.ToInt32(dr["CNPJ"].ToString());
+                    obj.CNPJ = dr["CNPJ"].ToString().Equals(string.Empty) ? 0 : Convert.ToInt64(dr["CNPJ"].ToString());
 
                 }
 
@@ -101,6 +101,7 @@ namespace PrefeituraConecta.API.Dados
                 cmd.Parameters.AddWithValue("@REGIME", filtroSimplesNacional.Regime);
                 cmd.Parameters.AddWithValue("@PERIODO_APURACAO_DE", filtroSimplesNacional.PeriodoApuracaoDe);
                 cmd.Parameters.AddWithValue("@PERIODO_APURACAO_ATE", filtroSimplesNacional.PeriodoApuracaoAte);
+                cmd.Parameters.AddWithValue("@CNPJ", filtroSimplesNacional.CNPJ);
 
                 return cmd.ExecuteNonQuery() != 0 ? true : false;
 

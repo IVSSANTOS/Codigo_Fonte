@@ -45,7 +45,7 @@ namespace PrefeituraConecta.MVC.UI.Controllers
                 obj.Regime = model["regime"].ToString();
                 obj.PeriodoApuracaoDe = model["apuracaoDe"].ToString().Equals(string.Empty) ? 0 : Convert.ToInt32(model["apuracaoDe"].ToString().Replace("/", ""));
                 obj.PeriodoApuracaoAte = model["apuracaoAte"].ToString().Equals(string.Empty) ? 0 : Convert.ToInt32(model["apuracaoAte"].ToString().Replace("/", ""));
-                obj.CNPJ = model["CNPJ"].ToString().Equals(string.Empty) ? 0 : Convert.ToInt32(model["CNPJ"].ToString());
+                obj.CNPJ = model["CNPJ"].ToString().Equals(string.Empty) ? 0 : Convert.ToInt64(model["CNPJ"].ToString());
 
                 ClaimsPrincipal currentPrincipal = Thread.CurrentPrincipal as ClaimsPrincipal;
      

@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using PrefeituraConecta.API.Negocio;
+using PrefeituraConecta.MVC.UI.Models;
 using PrefeituraConecta.MVC.UI.Models.Declaracoes;
 using PrefeituraConecta.MVC.UI.Utils;
 using System;
@@ -11,10 +12,10 @@ using System.Web.Mvc;
 namespace PrefeituraConecta.MVC.UI.Controllers.Declaracoes
 {
 
-
+    [Authorize]
     public class EmpresasController : Controller
     {
-        private VALOR_APURADO_EMPRESAS_BS bs = new VALOR_APURADO_EMPRESAS_BS();
+       
         FiltroSimplesNacional_BS filtroSimplesNacional_BS = new FiltroSimplesNacional_BS();
 
         // GET: Empresas
@@ -22,22 +23,24 @@ namespace PrefeituraConecta.MVC.UI.Controllers.Declaracoes
         [Authorize]
         public ActionResult Index()
         {
-
             // Obter o filtro da consulta
 
-            var filtroSimplesNacional = filtroSimplesNacional_BS.ObterFiltroSimplesNacional();
+            var source = filtroSimplesNacional_BS.ObterFiltroSimplesNacional();
+
+            FiltroSimplesNacionalModel filtroSimplesNacional = Mapper.Map<FiltroSimplesNacionalModel>(source);
+
 
             if (filtroSimplesNacional.Consulta.Equals(Consulta.ICMS.Value))
             {
-                return RedirectToAction("IncidenciaICMS");
+                return RedirectToAction("IncidenciaICMS", filtroSimplesNacional);
             }
             else if (filtroSimplesNacional.Consulta.Equals(Consulta.ISSQN.Value))
             {
-                return RedirectToAction("IncidenciaISSQN");
+                return RedirectToAction("IncidenciaISSQN", filtroSimplesNacional);
             }
             else if (filtroSimplesNacional.Consulta.Equals(Consulta.PADRAO.Value))
             {
-                return RedirectToAction("IncidenciaICMS_e_ISSQN");
+                return RedirectToAction("IncidenciaICMS_e_ISSQN", filtroSimplesNacional);
             }
             else
             {
@@ -45,10 +48,18 @@ namespace PrefeituraConecta.MVC.UI.Controllers.Declaracoes
             }
 
         }
-
-
-        public ActionResult IncidenciaICMS()
+        [Authorize]
+        public ActionResult IncidenciaICMS(FiltroSimplesNacionalModel filtroSimplesNacional)
         {
+            ViewBag.tipoConsulta = filtroSimplesNacional.Consulta;
+            ViewBag.ConsolidadoPor = filtroSimplesNacional.ConsolidadoPor;
+            ViewBag.TipoEmpresa = filtroSimplesNacional.TipoEmpresa;
+            ViewBag.TipoDeclaracao = filtroSimplesNacional.TipoDeclaracao;
+            ViewBag.Regime = filtroSimplesNacional.Regime;
+            ViewBag.CNPJ = filtroSimplesNacional.CNPJ;
+            ViewBag.PeriodoApuracaoDe = filtroSimplesNacional.PeriodoApuracaoDe;
+            ViewBag.PeriodoApuracaoAte = filtroSimplesNacional.PeriodoApuracaoAte;
+
             //var source = bs.ObterLista();
 
             //var lista = Mapper.Map<List<DECLARACOES_TRANSM_INCIDENCIA_ICMS_MODEL>>(source);
@@ -57,10 +68,18 @@ namespace PrefeituraConecta.MVC.UI.Controllers.Declaracoes
 
             return View(lista);
         }
-
-        // GET: DeclaracoesTransmitidas
-        public ActionResult IncidenciaISSQN()
+        [Authorize]
+        public ActionResult IncidenciaISSQN(FiltroSimplesNacionalModel filtroSimplesNacional)
         {
+            ViewBag.tipoConsulta = filtroSimplesNacional.Consulta;
+            ViewBag.ConsolidadoPor = filtroSimplesNacional.ConsolidadoPor;
+            ViewBag.TipoEmpresa = filtroSimplesNacional.TipoEmpresa;
+            ViewBag.TipoDeclaracao = filtroSimplesNacional.TipoDeclaracao;
+            ViewBag.Regime = filtroSimplesNacional.Regime;
+            ViewBag.CNPJ = filtroSimplesNacional.CNPJ;
+            ViewBag.PeriodoApuracaoDe = filtroSimplesNacional.PeriodoApuracaoDe;
+            ViewBag.PeriodoApuracaoAte = filtroSimplesNacional.PeriodoApuracaoAte;
+
             //var source = bs.ObterLista();
 
             //var lista = Mapper.Map<List<DECLARACOES_TRANSM_INCIDENCIA_ISSQN_MODEL>>(source);
@@ -69,16 +88,27 @@ namespace PrefeituraConecta.MVC.UI.Controllers.Declaracoes
 
             return View(lista);
         }
-
-        // GET: DeclaracoesTransmitidas
-        public ActionResult IncidenciaICMS_e_ISSQN()
+        [Authorize]
+        public ActionResult IncidenciaICMS_e_ISSQN(FiltroSimplesNacionalModel filtroSimplesNacional)
         {
-            var source = bs.ObterLista();
+            ViewBag.tipoConsulta = filtroSimplesNacional.Consulta;
+            ViewBag.ConsolidadoPor = filtroSimplesNacional.ConsolidadoPor;
+            ViewBag.TipoEmpresa = filtroSimplesNacional.TipoEmpresa;
+            ViewBag.TipoDeclaracao = filtroSimplesNacional.TipoDeclaracao;
+            ViewBag.Regime = filtroSimplesNacional.Regime;
+            ViewBag.CNPJ = filtroSimplesNacional.CNPJ;
+            ViewBag.PeriodoApuracaoDe = filtroSimplesNacional.PeriodoApuracaoDe;
+            ViewBag.PeriodoApuracaoAte = filtroSimplesNacional.PeriodoApuracaoAte;
 
-            var lista = Mapper.Map<List<DECLARACOES_INCIDENCIA_ISSQN_ICMS_MODEL>>(source);
-                       
+            //var source = bs.ObterLista();
+
+            //var lista = Mapper.Map<List<DECLARACOES_TRANSM_INCIDENCIA_ISSQN_ICMS_MODEL>>(source);
+
+            var lista = new List<DECLARACOES_INCIDENCIA_ISSQN_ICMS_MODEL>(); // teste
+
             return View(lista);
         }
+
 
     }
 }

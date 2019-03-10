@@ -38,6 +38,6 @@ namespace PrefeituraConecta.MVC.UI.Models
         public int PeriodoApuracaoAte { get; set; }
 
         [Display(Name = "CNPJ")]
-        public int CNPJ { get; set; }
+        public long CNPJ { get; set; }
     }
 }
